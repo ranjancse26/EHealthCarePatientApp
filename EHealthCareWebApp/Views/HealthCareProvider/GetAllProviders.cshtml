@@ -1,0 +1,411 @@
+﻿@model HealthCareProvider.Models.ProviderFilter
+@using EHealthCareWebApp.Helpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HealthCare Provider</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+<body>
+
+<link href="../../Content/bootstrap-responsive.min.css" rel="stylesheet" />
+<link href="../../Content/bootstrap.css" rel="stylesheet" />
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<link href="http://www.google.com/uds/css/gsearch.css" rel="stylesheet" type="text/css"/> 
+<script src="~/Scripts/yqlgeo.js"></script>
+
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<form id="JqAjaxForm">
+        <div style="display:table">
+            <div class="span4">
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Longitude, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.HiddenFor(model => model.Longitude)
+                    </div>
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Latitude, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.HiddenFor(model => model.Latitude)
+                    </div>
+                </div>
+           </div>
+            <div class="span4">
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Category, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(model => model.Category)
+                    </div>
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Insurances, new { @class = "control-label", })
+                    <div class="controls">
+                        @Html.TextBoxFor(model => model.Insurances)
+                    </div>
+                </div>
+
+            </div>
+            <div class="span4">
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Locality, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(model => model.Locality)
+                    </div>
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Region, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(model => model.Region)
+                    </div>
+                </div>
+                <div class="control-group">
+                   <div class="controls">
+                        <input type="button" class="btn btn-primary" value="Search" onclick="Search(); return false;"/>
+                    </div> 
+                </div>     
+            </div>
+        </div>    
+       <table style="margin-left:20px">
+            <tr>
+                <td>
+                    <div id="result"></div>     
+                </td>
+                <td>
+                     <div id="map" style="height: 350px; width:600px; margin:10px 0;float:right"></div>    
+                </td>
+            </tr>               
+       </table>           
+</form>        
+</body>
+</html>
+
+
+<link href="../../Content/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link href="../../Content/structure/infragistics.css" rel="stylesheet" />
+
+<script src="../../Scripts/infragistics.util.js"></script>
+<script src="../../Scripts/infragistics.core.js"></script>
+<script src="../../Scripts/infragistics.lob.js"></script>
+
+ <script>       
+     var categories = [         
+        "[\"HEALTHCARE\",\"NURSE\"]",	 
+        "[\"HEALTHCARE\",\"MENTAL HEALTH\"]",
+        "[\"HEALTHCARE\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"INTERNAL MEDICINE\"]",
+        "[\"HEALTHCARE\",\"DENTISTS\"]",
+        "[\"HEALTHCARE\",\"MENTAL HEALTH\",\"COUNSELING AND THERAPY\"]",
+        "[\"HEALTHCARE\",\"PHYSICAL THERAPY AND REHABILITATION\"]",
+        "[\"HEALTHCARE\",\"PHARMACIES\"]",
+        "[\"HEALTHCARE\",\"ASSISTED LIVING SERVICES\"]",
+        "[\"HEALTHCARE\",\"PHYSICAL THERAPY AND REHABILITATION\",\"SPORTS MEDICINE\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS","FAMILY MEDICINE\"]",
+        "[\"HEALTHCARE\",\"MENTAL HEALTH\",\"PSYCHOLOGISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"PEDIATRICIANS\"]",
+        "[\"COMMUNITY AND GOVERNMENT\",\"ORGANIZATIONS AND ASSOCIATIONS\",\"PUBLIC AND SOCIAL SERVICES\"]",
+        "[\"HEALTHCARE\",\"CHIROPRACTORS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"PSYCHIATRISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"ANESTHESIOLOGISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"RADIOLOGISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"OBSTETRICIANS AND GYNECOLOGISTS\"]",
+        "[\"RETAIL\",\"GLASSES AND OPTOMETRIST\"]",
+        "[\"HEALTHCARE\",\"WEIGHT LOSS AND NUTRITIONISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"CARDIOLOGISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"OPHTHALMOLOGISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"ORTHOPEDIC SURGEONS\"]",
+        "[\"HEALTHCARE\",\"HOLISTIC, ALTERNATIVE AND NATUROPATHIC MEDICINE\",\"ACUPUNCTURE\"]",
+        "[\"SERVICES AND SUPPLIES\",\"PERSONAL CARE\",\"MASSAGE CLINICS AND THERAPISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"PATHOLOGISTS\"]",
+        "[\"HEALTHCARE\",\"PODIATRISTS\"]",
+        "[\"HEALTHCARE\",\"HOSPITALS, CLINICS AND MEDICAL CENTERS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"GENERAL SURGERY\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"DERMATOLOGISTS\"]",
+        "[\"HEALTHCARE\",\"EMERGENCY SERVICES\"]",
+        "[\"SPORTS AND RECREATION\",\"PERSONAL TRAINERS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"ONCOLOGISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"EAR, NOSE AND THROAT\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"NEUROLOGISTS\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"PLASTIC SURGEONS\"]",
+        "[\"HEALTHCARE\",\"HOLISTIC, ALTERNATIVE AND NATUROPATHIC MEDICINE\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"RESPIRATORY\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"GERIATRICS\"]",
+        "[\"HEALTHCARE\",\"MEDICAL SUPPLIES AND LABS\"]",
+        "[\"HEALTHCARE\",\"PREGNANCY AND SEXUAL HEALTH\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"UROLOGISTS\"]",
+        "[\"HEALTHCARE\",\"ASSISTED LIVING SERVICES\",\"FACILITIES AND NURSING HOMES\"]",
+        "[\"SERVICES AND SUPPLIES\"]",
+        "[\"HEALTHCARE\",\"PHYSICIANS\",\"GASTROENTEROLOGISTS\"]",
+        "[\"SERVICES AND SUPPLIES\",\"VETERINARIANS\"]",
+        "[\"SERVICES AND SUPPLIES\",\"LEGAL\"]",
+        "[\"COMMUNITY AND GOVERNMENT\",\"ORGANIZATIONS AND ASSOCIATIONS\"]"
+     ]
+
+     $("#Category").autocomplete({
+         source: categories
+     });
+
+     var regions = [
+            "CA",
+            "NY",
+            "FL",
+            "TX",
+            "PA",
+            "IL",
+            "OH",
+            "MA",
+            "MI",
+            "WA",
+            "NC",
+            "NJ",
+            "GA",
+            "MD",
+            "VA",
+            "WI",
+            "CO",
+            "MN",
+            "TN",
+            "AZ",
+            "MO",
+            "OR",
+            "IN",
+            "CT",
+            "OK",
+            "KY",
+            "SC",
+            "LA",
+            "AR",
+            "AL",
+            "NM",
+            "KS",
+            "UT",
+            "NV",
+            "IA",
+            "DC",
+            "ME",
+            "MS",
+            "NE",
+            "NH",
+            "WV",
+            "HI",
+            "RI",
+            "ID",
+            "DE",
+            "AK",
+            "MT",
+            "PR",
+            "ND",
+            "SD"
+     ];
+
+     $("#Region").autocomplete({
+         source: regions
+     });
+
+     var insurances = [
+            "CIGNA",
+            "AETNA",
+            "UNITEDHEALTHCARE",
+            "HUMANA",
+            "BLUE CROSS AND BLUE SHIELD",
+            "MULTIPLAN",
+            "BLUE CROSS BLUE SHIELD",
+            "COVENTRY HEALTH CARE",
+            "MEDICAID",
+            "MEDICARE",
+            "PHCS",
+            "GREAT WEST HEALTHCARE",
+            "WELLPOINT",
+            "FIRST HEALTH NETWORK",
+            "HEALTHNET",
+            "GUARDIAN",
+            "DELTA DENTAL",
+            "MET-LIFE",
+            "UNITED CONCORDIA",
+            "AMERITAS",
+            "UNICARE",
+            "UNITEDHEALTHCARE DENTAL",
+            "GHI",
+            "OXFORD HEALTH PLANS",
+            "ASSURANT HEALTH",
+            "DENTEMAX DENTAL",
+            "ANTHEM",
+            "PACIFICARE",
+            "RAILROAD MEDICARE",
+            "COVENTRY HEALTHCARE",
+            "MEDICAL MUTUAL OF OHIO",
+            "WELLCARE",
+            "PRINCIPAL FINANCIAL",
+            "GREAT-WEST HEALTHCARE",
+            "AMERIGROUP",
+            "WORKERS' COMPENSATION",
+            "BLUE CROSS - CALIFORNIA",
+            "KAISER PERMANENTE",
+            "WELLCARE HEALTH PLANS",
+            "BCBS",
+            "OXFORD",
+            "PPOM",
+            "MOLINA",
+            "THE GUARDIAN LIFE INSURANCE COMPANY - AMERICA",
+            "PACIFICSOURCE",
+            "SAGAMORE HEALTH NETWORK",
+            "CENTENE",
+            "FIRST CHOICE HEALTH",
+            "PROVIDENCE HEALTH PLANS",
+            "EVERCARE"
+     ];
+     
+     $("#Insurances").autocomplete({
+         source: insurances
+     });
+
+     var localities = [
+        "NEW YORK",
+        "BROOKLYN",
+        "CHICAGO",
+        "LOS ANGELES",
+        "HOUSTON",
+        "PHILADELPHIA",
+        "PORTLAND",
+        "WASHINGTON",
+        "BOSTON",
+        "SAN FRANCISCO",
+        "SAN DIEGO",
+        "SEATTLE",
+        "ROCHESTER",
+        "DALLAS",
+        "BRONX",
+        "BALTIMORE",
+        "SAINT LOUIS",
+        "COLUMBUS",
+        "PHOENIX",
+        "MINNEAPOLIS",
+        "PITTSBURGH",
+        "CLEVELAND",
+        "SAN ANTONIO",
+        "MIAMI",
+        "ATLANTA",
+        "INDIANAPOLIS",
+        "LAS VEGAS",
+        "SPRINGFIELD",
+        "SACRAMENTO",
+        "DENVER",
+        "MILWAUKEE",
+        "CINCINNATI",
+        "ALBUQUERQUE",
+        "OKLAHOMA CITY",
+        "LOUISVILLE",
+        "TAMPA",
+        "JACKSONVILLE",
+        "AUSTIN",
+        "SALT LAKE CITY",
+        "NASHVILLE",
+        "COLUMBIA",
+        "TUCSON",
+        "BUFFALO",
+        "DETROIT",
+        "CHARLOTTE",
+        "RICHMOND",
+        "MADISON",
+        "KANSAS CITY",
+        "ORLANDO",
+        "OAKLAND"
+     ];
+
+     $("#Locality").autocomplete({
+         source: localities
+     });
+
+     function Search() {
+            $.ajax({
+                url: "/HealthCareProvider/GetAllProviders",
+                type: "post",
+                data: $("#JqAjaxForm").serialize(),
+                success: function(response){
+                    $("#result").html(response);
+                },
+                error: function (data) {
+                    $("#result").html(data.responseText);
+                }   
+            }); 
+     }
+
+     function initiate_geolocation() {
+         if (navigator.geolocation) {
+             navigator.geolocation.getCurrentPosition(handle_geolocation_query, handle_errors);
+         }
+         else {
+             yqlgeo.get('visitor', normalize_yql_response);
+         }
+     }
+
+     function handle_errors(error) {
+         switch (error.code) {
+             case error.PERMISSION_DENIED: alert("user did not share geolocation data");
+                 break;
+             case error.POSITION_UNAVAILABLE: alert("could not detect current position");
+                 break;
+             case error.TIMEOUT: alert("retrieving position timedout");
+                 break;
+             default: alert("unknown error");
+                 break;
+         }
+     }
+
+     function normalize_yql_response(response) {
+         if (response.error) {
+             var error = { code: 0 };
+             handle_error(error);
+             return;
+         }
+         var position = {
+             coords:
+             {
+                 latitude: response.place.centroid.latitude,
+                 longitude: response.place.centroid.longitude
+             },
+             address:
+             {
+                 city: response.place.locality2.content,
+                 region: response.place.admin1.content,
+                 country: response.place.country.content
+             }
+         };
+         handle_geolocation_query(position);
+     }
+   
+     function handle_geolocation_query(position) {
+         $('#Longitude').val(position.coords.latitude);
+         $('#Latitude').val(position.coords.longitude);
+     }
+
+     // Our global state
+     var gMap;
+
+     function displayMap(latitude, longitude) {
+         gMap = new google.maps.Map(document.getElementById("map"), {
+             center: new google.maps.LatLng(latitude, longitude),
+             zoom: 15,
+             mapTypeId: 'roadmap'
+         });
+
+        var myLatlng = new google.maps.LatLng(latitude, longitude);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: gMap,
+            title: "You are here!"
+        });
+    }
+   
+    </script>  

@@ -1,0 +1,65 @@
+﻿<Controls:MetroWindow x:Class="EHealthCareDesktopApp.ManageAppointments"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Appointments" Height="595.522" Width="850" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid Margin="0,0,0,-3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="460" />
+            <ColumnDefinition Width="240" />
+        </Grid.ColumnDefinitions>
+        <DatePicker FontSize="24" Grid.Row="1" TabIndex="5" x:Name="dtPickerStartDate"  HorizontalAlignment="Left" Height="44" Margin="10,28,0,0" VerticalAlignment="Top" Width="434" Grid.Column="1"/>
+        <Label Grid.Column="0" Grid.Row="1" Content="Start Date: " HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" FontSize="24" Height="42" Width="128" />
+        
+        <Label Grid.Column="0" Grid.Row="2" Content="End Date: " HorizontalAlignment="Left" Margin="30,27,0,0" VerticalAlignment="Top" FontSize="24" Height="42" Width="118" />
+        <DatePicker FontSize="24" Grid.Column="1" Grid.Row="2" TabIndex="5" x:Name="dtPickerEndDate"  HorizontalAlignment="Left" Height="44" Margin="10,29,0,0" VerticalAlignment="Top" Width="434"  />
+       
+        <Label Grid.Column="0" Grid.Row="0" Content="Provider: " HorizontalAlignment="Left" Margin="36,14,0,0" VerticalAlignment="Top" FontSize="24" Height="42" Width="110" />
+        <ComboBox FontSize="24" Grid.Column="1" Grid.Row="0" x:Name="cmbProvider" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="434" Height="42"/>
+        
+        <Label Grid.Column="0" Grid.Row="3" Content="Specialty: " HorizontalAlignment="Left" Margin="30,32,0,0" VerticalAlignment="Top" FontSize="24" Height="42" Width="116" />
+        <ComboBox FontSize="24" x:Name="cmbSpecialty" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="434" Height="42" Grid.Column="1" Grid.Row="3"/>
+        
+        <Label Grid.Column="0" Grid.Row="4" Content="Purpose: " HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top" FontSize="24" Height="42" Width="108" />
+        <TextBox FontSize="24" x:Name="txtPurpose" HorizontalAlignment="Left" Height="42" Margin="10,27,0,0" TextWrapping="Wrap" Text=""
+                 VerticalAlignment="Top" Width="434" Grid.Column="1" Grid.Row="4"/>
+        <Label Grid.Column="0" Grid.Row="5" Content="Type: " HorizontalAlignment="Left" Margin="36,32,0,0" VerticalAlignment="Top" FontSize="24" Height="42" Width="73" />
+        <ComboBox FontSize="24" x:Name="cmbType" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="434" Height="42" Grid.Column="1" Grid.Row="5"/>
+        <Label Grid.Column="0" Grid.Row="6" Content="Notes: " HorizontalAlignment="Left" Margin="30,22,0,0" VerticalAlignment="Top" FontSize="24" Height="42" Width="85" />
+        <TextBox Controls:TextboxHelper.Watermark="Notes" x:Name="txtNotes" 
+        	HorizontalAlignment="Left" Height="98" Margin="10,22,0,-11" TextWrapping="Wrap" 
+        	VerticalAlignment="Top" Width="440" FontSize="24" Grid.Column="1" Grid.Row="6"/>
+
+        <xctk:DateTimeUpDown  x:Name="startTime" Format="ShortTime" FontSize="24" Value="9:00" Grid.Column="2" Grid.Row="1" Margin="0,28,88,12"/>
+
+        <xctk:DateTimeUpDown x:Name="endTime" Format="ShortTime" FontSize="24" Value="9:00" Grid.Column="2" Grid.Row="2" Margin="0,27,88,5"/>
+
+        <Button x:Name="Save" FontSize="24" Content="Save" HorizontalAlignment="Left" 
+        	Margin="14,66,0,-10" VerticalAlignment="Top" Width="138" Height="54" Click="SaveAppointment" Grid.Column="2" Grid.Row="6"/>
+
+    </Grid>
+</Controls:MetroWindow>

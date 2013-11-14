@@ -1,0 +1,39 @@
+﻿<Controls:MetroWindow x:Class="EHealthCareDesktopApp.ManageClinicalInfo.ManagePatientDicom"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Manage Patient Dicom" WindowState="Maximized" Loaded="WindowLoaded" ResizeMode="NoResize">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="1" x:Name="listView" ScrollViewer.VerticalScrollBarVisibility="Visible" FontSize="24">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="300" Header="DateTime"  DisplayMemberBinding="{Binding DateTime}"/>
+                    <GridViewColumn Width="400" Header="Subject" DisplayMemberBinding="{Binding Subject}"/>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="View" Width="200" Click="ViewDicomButtonClick" CommandParameter="{Binding Id}" ></Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>                
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Controls:MetroWindow>

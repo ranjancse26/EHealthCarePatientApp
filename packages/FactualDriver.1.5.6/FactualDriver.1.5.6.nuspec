@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FactualDriver</id>
+    <version>1.5.6</version>
+    <title>FactualDriver</title>
+    <authors>Denis Pavlov, Sergey Maskalik</authors>
+    <owners>Denis Pavlov, Sergey Maskalik</owners>
+    <projectUrl>https://github.com/Factual/factual-csharp-driver</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>.Net client library for Factual API. Please refer to https://github.com/Factual/factual-csharp-driver for documentation.</description>
+    <summary>.NET driver for Factual API. Provides a library to setup and receive data from factual in two lines of code. Most of the design is ported from Java Factual Driver.</summary>
+    <releaseNotes>Remove monetize support.</releaseNotes>
+    <copyright />
+    <language />
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="5.0.6" />
+    </dependencies>
+  </metadata>
+</package>

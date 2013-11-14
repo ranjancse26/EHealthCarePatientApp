@@ -1,0 +1,42 @@
+﻿<Controls:MetroWindow x:Class="EHealthCareDesktopApp.ManageClinicalInfo.ManageBloodPressure"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Manage Blood Pressure" Height="497" Width="422" Loaded="WindowLoaded"
+        WindowState="Normal" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <DatePicker TabIndex="5" x:Name="dtPicker"  HorizontalAlignment="Left" Height="44" Margin="188,11,0,0" VerticalAlignment="Top" Width="169" FontSize="24"/>
+        <Label Content="Date: " HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" FontSize="24" />
+
+        <Label Content="Systolic: " HorizontalAlignment="Left" Margin="25,88,0,0" VerticalAlignment="Top" FontSize="24" />
+        <TextBox Controls:TextboxHelper.Watermark="Systolic" x:Name="txtSystolic" 
+                 HorizontalAlignment="Left" Height="46" Margin="188,88,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="169" FontSize="24" PreviewTextInput="SystolicPreviewTextInput"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" 
+                Margin="188,385,0,0" VerticalAlignment="Top" Width="169" Height="54" Click="SaveBloodPressure"/>
+        <Label Content="Diastolic: " HorizontalAlignment="Left" Margin="25,160,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox Controls:TextboxHelper.Watermark="Diastolic" x:Name="txtDiastolic" 
+        	HorizontalAlignment="Left" Height="46" Margin="188,160,0,0" TextWrapping="Wrap" 
+        	VerticalAlignment="Top" Width="169" FontSize="24" PreviewTextInput="DiastolicPreviewTextInput"/>
+        <Label Content="Pulse: " HorizontalAlignment="Left" Margin="25,238,0,0" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="0.518,2.667"/>
+        <TextBox Controls:TextboxHelper.Watermark="Pulse" x:Name="txtPulse" 
+        	HorizontalAlignment="Left" Height="46" Margin="188,238,0,0" TextWrapping="Wrap" 
+        	VerticalAlignment="Top" Width="169" FontSize="24"/>
+        <CheckBox Content="Irregular HeartBeat" 
+                  FontSize="24" HorizontalAlignment="Left" x:Name="chkIrregularHeartBeat"
+                  Margin="34,317,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Controls:MetroWindow>

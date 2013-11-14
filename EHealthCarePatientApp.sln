@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHealthCareWebApp", "EHealthCareWebApp\EHealthCareWebApp.csproj", "{B296AA79-7FA8-4F14-A324-350C5B38DE27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHealthCareWebApp.Tests", "EHealthCareWebApp.Tests\EHealthCareWebApp.Tests.csproj", "{A3999D08-749B-4022-AAEC-98C93D062562}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHealthCareDesktopApp", "EHealthCareDesktopApp\EHealthCareDesktopApp.csproj", "{6C63CD4B-C6E7-4244-8248-A0C74775692D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHealthCareDataAccess", "EHealthCareDataAccess\EHealthCareDataAccess.csproj", "{86108DC8-3A59-4433-9D9F-19C6AC669DA7}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "EHealthCarePatientAppSetup", "EHealthCarePatientAppSetup\EHealthCarePatientAppSetup.isproj", "{47400DE8-5AB7-44E3-B367-3D480A08FF96}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ranjandailata.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = EHealthCarePatientAppSetup\\EHealthCarePatientAppSetup.isproj
+		SccProjectName0 = EHealthCarePatientAppSetup
+		SccAuxPath0 = https://ranjandailata.visualstudio.com/defaultcollection
+		SccLocalPath0 = EHealthCarePatientAppSetup
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = EHealthCareDataAccess\\EHealthCareDataAccess.csproj
+		SccProjectName1 = EHealthCareDataAccess
+		SccAuxPath1 = https://ranjandailata.visualstudio.com/defaultcollection
+		SccLocalPath1 = EHealthCareDataAccess
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = EHealthCareDesktopApp\\EHealthCareDesktopApp.csproj
+		SccProjectName2 = EHealthCareDesktopApp
+		SccAuxPath2 = https://ranjandailata.visualstudio.com/defaultcollection
+		SccLocalPath2 = EHealthCareDesktopApp
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = EHealthCareWebApp\\EHealthCareWebApp.csproj
+		SccProjectName3 = EHealthCareWebApp
+		SccAuxPath3 = https://ranjandailata.visualstudio.com/defaultcollection
+		SccLocalPath3 = EHealthCareWebApp
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = EHealthCareWebApp.Tests\\EHealthCareWebApp.Tests.csproj
+		SccProjectName4 = EHealthCareWebApp.Tests
+		SccAuxPath4 = https://ranjandailata.visualstudio.com/defaultcollection
+		SccLocalPath4 = EHealthCareWebApp.Tests
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{B296AA79-7FA8-4F14-A324-350C5B38DE27}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{A3999D08-749B-4022-AAEC-98C93D062562}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{6C63CD4B-C6E7-4244-8248-A0C74775692D}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{86108DC8-3A59-4433-9D9F-19C6AC669DA7}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.Debug|Any CPU.ActiveCfg = DVD-5
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.Debug|Any CPU.Build.0 = DVD-5
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.DVD-5|Any CPU.Build.0 = DVD-5
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.Release|Any CPU.ActiveCfg = SingleImage
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.Release|Any CPU.Build.0 = SingleImage
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{47400DE8-5AB7-44E3-B367-3D480A08FF96}.SingleImage|Any CPU.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

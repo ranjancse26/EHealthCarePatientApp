@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="eHealthCareModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="eHealthCareModelStoreContainer">
+          <EntitySet Name="AllergyReaction" EntityType="eHealthCareModel.Store.AllergyReaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AllergyType" EntityType="eHealthCareModel.Store.AllergyType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Appointments" EntityType="eHealthCareModel.Store.Appointments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AudioAppointments" EntityType="eHealthCareModel.Store.AudioAppointments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BloodPressures" EntityType="eHealthCareModel.Store.BloodPressures" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Conditions" EntityType="eHealthCareModel.Store.Conditions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contacts" EntityType="eHealthCareModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Dicom" EntityType="eHealthCareModel.Store.Dicom" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DietaryIntakes" EntityType="eHealthCareModel.Store.DietaryIntakes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Distances" EntityType="eHealthCareModel.Store.Distances" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Elevations" EntityType="eHealthCareModel.Store.Elevations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Heights" EntityType="eHealthCareModel.Store.Heights" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Insurances" EntityType="eHealthCareModel.Store.Insurances" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MedicationDose" EntityType="eHealthCareModel.Store.MedicationDose" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Medications" EntityType="eHealthCareModel.Store.Medications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MedicationStregth" EntityType="eHealthCareModel.Store.MedicationStregth" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MedicationTaken" EntityType="eHealthCareModel.Store.MedicationTaken" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NutritionInfos" EntityType="eHealthCareModel.Store.NutritionInfos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientNotes" EntityType="eHealthCareModel.Store.PatientNotes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Patients" EntityType="eHealthCareModel.Store.Patients" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Procedures" EntityType="eHealthCareModel.Store.Procedures" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Providers" EntityType="eHealthCareModel.Store.Providers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Specialties" EntityType="eHealthCareModel.Store.Specialties" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Steps" EntityType="eHealthCareModel.Store.Steps" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Weights" EntityType="eHealthCareModel.Store.Weights" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__BloodPres__Patie__534D60F1" Association="eHealthCareModel.Store.FK__BloodPres__Patie__534D60F1">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="BloodPressures" EntitySet="BloodPressures" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Condition__Patie__5441852A" Association="eHealthCareModel.Store.FK__Condition__Patie__5441852A">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contacts__Patien__05D8E0BE" Association="eHealthCareModel.Store.FK__Contacts__Patien__05D8E0BE">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DietaryIn__Patie__5535A963" Association="eHealthCareModel.Store.FK__DietaryIn__Patie__5535A963">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="DietaryIntakes" EntitySet="DietaryIntakes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Distances__Patie__5629CD9C" Association="eHealthCareModel.Store.FK__Distances__Patie__5629CD9C">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Distances" EntitySet="Distances" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Elevation__Patie__571DF1D5" Association="eHealthCareModel.Store.FK__Elevation__Patie__571DF1D5">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Elevations" EntitySet="Elevations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Heights__Patient__5812160E" Association="eHealthCareModel.Store.FK__Heights__Patient__5812160E">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Heights" EntitySet="Heights" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Insurance__Patie__02FC7413" Association="eHealthCareModel.Store.FK__Insurance__Patie__02FC7413">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Insurances" EntitySet="Insurances" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Steps__PatientId__5BE2A6F2" Association="eHealthCareModel.Store.FK__Steps__PatientId__5BE2A6F2">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Steps" EntitySet="Steps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Weights__Patient__3F115E1A" Association="eHealthCareModel.Store.FK__Weights__Patient__3F115E1A">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Weights" EntitySet="Weights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medication_Patients" Association="eHealthCareModel.Store.FK_Medication_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Medications" EntitySet="Medications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientNotes_Patients" Association="eHealthCareModel.Store.FK_PatientNotes_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="PatientNotes" EntitySet="PatientNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Procedures_Patients" Association="eHealthCareModel.Store.FK_Procedures_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Procedures" EntitySet="Procedures" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AllergyReaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Reaction" Type="varchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="AllergyType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Appointments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+          <Property Name="ProviderId" Type="int" Nullable="false" />
+          <Property Name="SpecialtyId" Type="int" Nullable="false" />
+          <Property Name="Purpose" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AudioAppointments">
+          <Key>
+            <PropertyRef Name="AudioId" />
+          </Key>
+          <Property Name="AudioId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Audio" Type="varbinary(max)" Nullable="false" />
+          <Property Name="FileName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AppointmentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BloodPressures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="When" Type="datetime" Nullable="false" />
+          <Property Name="Systolic" Type="int" Nullable="false" />
+          <Property Name="Diastolic" Type="int" Nullable="false" />
+          <Property Name="Pulse" Type="int" Nullable="false" />
+          <Property Name="IrregularHeartbeat" Type="bit" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Conditions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Recovered" Type="varchar" MaxLength="150" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PhoneType" Type="varchar" MaxLength="20" />
+          <Property Name="IsPrimary" Type="bit" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="StreetAddress1" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="StreetAddress2" Type="varchar" MaxLength="200" />
+          <Property Name="StreetAddress3" Type="varchar" MaxLength="200" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="StateOrProvince" Type="varchar" MaxLength="20" />
+          <Property Name="ZipOrPostalCode" Type="varchar" MaxLength="10" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dicom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="ProviderId" Type="int" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Subject" Type="varchar(max)" />
+          <Property Name="Dicom" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DietaryIntakes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Meal" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Calories" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="200" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Distances">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Distance" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Elevations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Elevation" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Heights">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="HeightFeet" Type="int" Nullable="false" />
+          <Property Name="HeightInch" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Insurances">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="PlanName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CoverageType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsPrimary" Type="bit" />
+          <Property Name="GroupNumber" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="SubscriberID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ExpirationDate" Type="datetime" Nullable="false" />
+          <Property Name="SubscriberDate" Type="datetime" Nullable="false" />
+          <Property Name="SubscriberDOB" Type="datetime" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicationDose">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Value" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Medications">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="MedicationName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="StrengthUnit" Type="int" Nullable="false" />
+          <Property Name="StrengthText" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DoseUnit" Type="int" Nullable="false" />
+          <Property Name="DoseText" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="HowTaken" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ReasonForTaking" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicationStregth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Unit" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Value" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MedicationTaken">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Value" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NutritionInfos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" />
+          <Property Name="Carbohydrates" Type="int" />
+          <Property Name="Protein" Type="int" />
+          <Property Name="TotalFat" Type="int" />
+          <Property Name="SaturatedFat" Type="int" />
+          <Property Name="MonounsaturatedFat" Type="int" />
+          <Property Name="PolyunsaturatedFat" Type="int" />
+          <Property Name="TransFat" Type="int" />
+          <Property Name="Sugars" Type="int" />
+          <Property Name="DietaryFiber" Type="int" />
+          <Property Name="Cholesterol" Type="int" />
+          <Property Name="Sodium" Type="int" />
+          <Property Name="Iron" Type="int" />
+          <Property Name="Magnesium" Type="int" />
+          <Property Name="Phosphorus" Type="int" />
+          <Property Name="Potassium" Type="int" />
+          <Property Name="Zinc" Type="int" />
+          <Property Name="VitaminA-RAE" Type="int" />
+          <Property Name="Vitamin-B6" Type="int" />
+          <Property Name="Vitamin-B12" Type="int" />
+          <Property Name="Vitamin-C" Type="int" />
+          <Property Name="Vitamin-D" Type="int" />
+          <Property Name="Vitamin-E" Type="int" />
+          <Property Name="Vitamin-K" Type="int" />
+          <Property Name="Niacin" Type="int" />
+          <Property Name="Riboflavin" Type="int" />
+          <Property Name="Thiamin" Type="int" />
+          <Property Name="Folate-DFE" Type="int" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientNotes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="varchar(max)" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="200" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="15" />
+          <Property Name="EmailAddress" Type="nchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Procedures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="ProcedureName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="PrimaryProviderId" Type="int" Nullable="false" />
+          <Property Name="SecondaryProviderId" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Providers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="PhoneNumber" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Specialties">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SpecialityName" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Steps">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Steps" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Weights">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="WeightGoal" Type="float" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__BloodPres__Patie__534D60F1">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="BloodPressures" Type="eHealthCareModel.Store.BloodPressures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="BloodPressures">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Condition__Patie__5441852A">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Conditions" Type="eHealthCareModel.Store.Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Contacts__Patien__05D8E0BE">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Contacts" Type="eHealthCareModel.Store.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DietaryIn__Patie__5535A963">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="DietaryIntakes" Type="eHealthCareModel.Store.DietaryIntakes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="DietaryIntakes">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Distances__Patie__5629CD9C">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Distances" Type="eHealthCareModel.Store.Distances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Distances">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Elevation__Patie__571DF1D5">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Elevations" Type="eHealthCareModel.Store.Elevations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Elevations">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Heights__Patient__5812160E">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Heights" Type="eHealthCareModel.Store.Heights" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Heights">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Insurance__Patie__02FC7413">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Insurances" Type="eHealthCareModel.Store.Insurances" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Insurances">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Steps__PatientId__5BE2A6F2">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Steps" Type="eHealthCareModel.Store.Steps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Steps">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Weights__Patient__3F115E1A">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Weights" Type="eHealthCareModel.Store.Weights" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Weights">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medication_Patients">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Medications" Type="eHealthCareModel.Store.Medications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Medications">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientNotes_Patients">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="PatientNotes" Type="eHealthCareModel.Store.PatientNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientNotes">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Procedures_Patients">
+          <End Role="Patients" Type="eHealthCareModel.Store.Patients" Multiplicity="1" />
+          <End Role="Procedures" Type="eHealthCareModel.Store.Procedures" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Procedures">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eHealthCareModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="eHealthCareEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AllergyReactions" EntityType="eHealthCareModel.AllergyReaction" />
+          <EntitySet Name="AllergyTypes" EntityType="eHealthCareModel.AllergyType" />
+          <EntitySet Name="BloodPressures" EntityType="eHealthCareModel.BloodPressure" />
+          <EntitySet Name="Conditions" EntityType="eHealthCareModel.Condition" />
+          <EntitySet Name="Contacts" EntityType="eHealthCareModel.Contact" />
+          <EntitySet Name="DietaryIntakes" EntityType="eHealthCareModel.DietaryIntake" />
+          <EntitySet Name="Distances" EntityType="eHealthCareModel.Distance" />
+          <EntitySet Name="Elevations" EntityType="eHealthCareModel.Elevation" />
+          <EntitySet Name="Heights" EntityType="eHealthCareModel.Height" />
+          <EntitySet Name="Insurances" EntityType="eHealthCareModel.Insurance" />
+          <EntitySet Name="MedicationDoses" EntityType="eHealthCareModel.MedicationDose" />
+          <EntitySet Name="Medications" EntityType="eHealthCareModel.Medication" />
+          <EntitySet Name="MedicationStregths" EntityType="eHealthCareModel.MedicationStregth" />
+          <EntitySet Name="MedicationTakens" EntityType="eHealthCareModel.MedicationTaken" />
+          <EntitySet Name="NutritionInfos" EntityType="eHealthCareModel.NutritionInfo" />
+          <EntitySet Name="PatientNotes" EntityType="eHealthCareModel.PatientNote" />
+          <EntitySet Name="Patients" EntityType="eHealthCareModel.Patient" />
+          <EntitySet Name="Procedures" EntityType="eHealthCareModel.Procedure" />
+          <EntitySet Name="Providers" EntityType="eHealthCareModel.Provider" />
+          <EntitySet Name="Specialties" EntityType="eHealthCareModel.Specialty" />
+          <EntitySet Name="Steps" EntityType="eHealthCareModel.Step" />
+          <EntitySet Name="Weights" EntityType="eHealthCareModel.Weight" />
+          <AssociationSet Name="FK__BloodPres__Patie__534D60F1" Association="eHealthCareModel.FK__BloodPres__Patie__534D60F1">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="BloodPressure" EntitySet="BloodPressures" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Condition__Patie__5441852A" Association="eHealthCareModel.FK__Condition__Patie__5441852A">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Condition" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contacts__Patien__05D8E0BE" Association="eHealthCareModel.FK__Contacts__Patien__05D8E0BE">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DietaryIn__Patie__5535A963" Association="eHealthCareModel.FK__DietaryIn__Patie__5535A963">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="DietaryIntake" EntitySet="DietaryIntakes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Distances__Patie__5629CD9C" Association="eHealthCareModel.FK__Distances__Patie__5629CD9C">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Distance" EntitySet="Distances" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Elevation__Patie__571DF1D5" Association="eHealthCareModel.FK__Elevation__Patie__571DF1D5">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Elevation" EntitySet="Elevations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Heights__Patient__5812160E" Association="eHealthCareModel.FK__Heights__Patient__5812160E">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Height" EntitySet="Heights" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Insurance__Patie__02FC7413" Association="eHealthCareModel.FK__Insurance__Patie__02FC7413">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Insurance" EntitySet="Insurances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medication_Patients" Association="eHealthCareModel.FK_Medication_Patients">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Medication" EntitySet="Medications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientNotes_Patients" Association="eHealthCareModel.FK_PatientNotes_Patients">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientNote" EntitySet="PatientNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Steps__PatientId__5BE2A6F2" Association="eHealthCareModel.FK__Steps__PatientId__5BE2A6F2">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Step" EntitySet="Steps" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Weights__Patient__3F115E1A" Association="eHealthCareModel.FK__Weights__Patient__3F115E1A">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Weight" EntitySet="Weights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Procedures_Patients" Association="eHealthCareModel.FK_Procedures_Patients">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Procedure" EntitySet="Procedures" />
+          </AssociationSet>
+          <EntitySet Name="Appointments" EntityType="eHealthCareModel.Appointment" />
+          <EntitySet Name="AudioAppointments" EntityType="eHealthCareModel.AudioAppointment" />
+          <EntitySet Name="Dicoms" EntityType="eHealthCareModel.Dicom" />
+        </EntityContainer>
+        <EntityType Name="AllergyReaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Reaction" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AllergyType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BloodPressure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="DateTime" Name="When" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="Systolic" Nullable="false" />
+          <Property Type="Int32" Name="Diastolic" Nullable="false" />
+          <Property Type="Int32" Name="Pulse" Nullable="false" />
+          <Property Type="Boolean" Name="IrregularHeartbeat" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__BloodPres__Patie__534D60F1" FromRole="BloodPressure" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EndDate" Precision="3" />
+          <Property Type="String" Name="Recovered" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__Condition__Patie__5441852A" FromRole="Condition" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPrimary" />
+          <Property Type="String" Name="EmailAddress" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StreetAddress1" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StreetAddress2" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StreetAddress3" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StateOrProvince" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZipOrPostalCode" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__Contacts__Patien__05D8E0BE" FromRole="Contact" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="DietaryIntake">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Meal" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Calories" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__DietaryIn__Patie__5535A963" FromRole="DietaryIntake" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Distance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="Decimal" Name="Distance1" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__Distances__Patie__5629CD9C" FromRole="Distance" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Elevation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="Decimal" Name="Elevation1" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__Elevation__Patie__571DF1D5" FromRole="Elevation" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Height">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="Int32" Name="HeightFeet" Nullable="false" />
+          <Property Type="Int32" Name="HeightInch" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__Heights__Patient__5812160E" FromRole="Height" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Insurance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="PlanName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CoverageType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPrimary" />
+          <Property Type="String" Name="GroupNumber" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SubscriberID" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ExpirationDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="SubscriberDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="SubscriberDOB" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__Insurance__Patie__02FC7413" FromRole="Insurance" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="MedicationDose">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Value" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Medication">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="MedicationName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="StrengthUnit" Nullable="false" />
+          <Property Type="String" Name="StrengthText" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DoseUnit" Nullable="false" />
+          <Property Type="String" Name="DoseText" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HowTaken" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReasonForTaking" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="EndDate" Precision="0" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK_Medication_Patients" FromRole="Medication" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="MedicationStregth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Unit" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Value" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MedicationTaken">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Value" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NutritionInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" />
+          <Property Type="Int32" Name="Carbohydrates" />
+          <Property Type="Int32" Name="Protein" />
+          <Property Type="Int32" Name="TotalFat" />
+          <Property Type="Int32" Name="SaturatedFat" />
+          <Property Type="Int32" Name="MonounsaturatedFat" />
+          <Property Type="Int32" Name="PolyunsaturatedFat" />
+          <Property Type="Int32" Name="TransFat" />
+          <Property Type="Int32" Name="Sugars" />
+          <Property Type="Int32" Name="DietaryFiber" />
+          <Property Type="Int32" Name="Cholesterol" />
+          <Property Type="Int32" Name="Sodium" />
+          <Property Type="Int32" Name="Iron" />
+          <Property Type="Int32" Name="Magnesium" />
+          <Property Type="Int32" Name="Phosphorus" />
+          <Property Type="Int32" Name="Potassium" />
+          <Property Type="Int32" Name="Zinc" />
+          <Property Type="Int32" Name="VitaminA_RAE" />
+          <Property Type="Int32" Name="Vitamin_B6" />
+          <Property Type="Int32" Name="Vitamin_B12" />
+          <Property Type="Int32" Name="Vitamin_C" />
+          <Property Type="Int32" Name="Vitamin_D" />
+          <Property Type="Int32" Name="Vitamin_E" />
+          <Property Type="Int32" Name="Vitamin_K" />
+          <Property Type="Int32" Name="Niacin" />
+          <Property Type="Int32" Name="Riboflavin" />
+          <Property Type="Int32" Name="Thiamin" />
+          <Property Type="Int32" Name="Folate_DFE" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientNote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="Notes" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <Property Type="String" Name="Subject" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK_PatientNotes_Patients" FromRole="PatientNote" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Type="Int32" Name="PatientId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DOB" Nullable="false" Precision="3" />
+          <Property Type="String" Name="PhoneNumber" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailAddress" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Gender" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="BloodPressures" Relationship="eHealthCareModel.FK__BloodPres__Patie__534D60F1" FromRole="Patient" ToRole="BloodPressure" />
+          <NavigationProperty Name="Conditions" Relationship="eHealthCareModel.FK__Condition__Patie__5441852A" FromRole="Patient" ToRole="Condition" />
+          <NavigationProperty Name="Contacts" Relationship="eHealthCareModel.FK__Contacts__Patien__05D8E0BE" FromRole="Patient" ToRole="Contact" />
+          <NavigationProperty Name="DietaryIntakes" Relationship="eHealthCareModel.FK__DietaryIn__Patie__5535A963" FromRole="Patient" ToRole="DietaryIntake" />
+          <NavigationProperty Name="Distances" Relationship="eHealthCareModel.FK__Distances__Patie__5629CD9C" FromRole="Patient" ToRole="Distance" />
+          <NavigationProperty Name="Elevations" Relationship="eHealthCareModel.FK__Elevation__Patie__571DF1D5" FromRole="Patient" ToRole="Elevation" />
+          <NavigationProperty Name="Heights" Relationship="eHealthCareModel.FK__Heights__Patient__5812160E" FromRole="Patient" ToRole="Height" />
+          <NavigationProperty Name="Insurances" Relationship="eHealthCareModel.FK__Insurance__Patie__02FC7413" FromRole="Patient" ToRole="Insurance" />
+          <NavigationProperty Name="Medications" Relationship="eHealthCareModel.FK_Medication_Patients" FromRole="Patient" ToRole="Medication" />
+          <NavigationProperty Name="PatientNotes" Relationship="eHealthCareModel.FK_PatientNotes_Patients" FromRole="Patient" ToRole="PatientNote" />
+          <NavigationProperty Name="Steps" Relationship="eHealthCareModel.FK__Steps__PatientId__5BE2A6F2" FromRole="Patient" ToRole="Step" />
+          <NavigationProperty Name="Weights" Relationship="eHealthCareModel.FK__Weights__Patient__3F115E1A" FromRole="Patient" ToRole="Weight" />
+          <NavigationProperty Name="Procedure" Relationship="eHealthCareModel.FK_Procedures_Patients" FromRole="Patient" ToRole="Procedure" />
+        </EntityType>
+        <EntityType Name="Procedure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="ProcedureName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="PrimaryProviderId" Nullable="false" />
+          <Property Type="Int32" Name="SecondaryProviderId" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK_Procedures_Patients" FromRole="Procedure" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MiddleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DOB" Nullable="false" Precision="3" />
+          <Property Type="Boolean" Name="Gender" Nullable="false" />
+          <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailAddress" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Specialty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SpecialityName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Step">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="Int32" Name="Steps" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__Steps__PatientId__5BE2A6F2" FromRole="Step" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Weight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="Double" Name="Weight1" Nullable="false" />
+          <Property Type="Double" Name="WeightGoal" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="eHealthCareModel.FK__Weights__Patient__3F115E1A" FromRole="Weight" ToRole="Patient" />
+        </EntityType>
+        <Association Name="FK__BloodPres__Patie__534D60F1">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.BloodPressure" Role="BloodPressure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="BloodPressure">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Condition__Patie__5441852A">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Condition" Role="Condition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Condition">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Contacts__Patien__05D8E0BE">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DietaryIn__Patie__5535A963">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.DietaryIntake" Role="DietaryIntake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="DietaryIntake">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Distances__Patie__5629CD9C">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Distance" Role="Distance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Distance">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Elevation__Patie__571DF1D5">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Elevation" Role="Elevation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Elevation">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Heights__Patient__5812160E">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Height" Role="Height" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Height">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Insurance__Patie__02FC7413">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Insurance" Role="Insurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Insurance">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medication_Patients">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Medication" Role="Medication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Medication">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientNotes_Patients">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.PatientNote" Role="PatientNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="PatientNote">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Steps__PatientId__5BE2A6F2">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Step" Role="Step" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Step">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Weights__Patient__3F115E1A">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Weight" Role="Weight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Weight">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Procedures_Patients">
+          <End Type="eHealthCareModel.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="eHealthCareModel.Procedure" Role="Procedure" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientId" />
+            </Principal>
+            <Dependent Role="Procedure">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="ProviderId" Nullable="false" />
+          <Property Type="Int32" Name="SpecialtyId" Nullable="false" />
+          <Property Type="String" Name="Purpose" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AudioAppointment">
+          <Key>
+            <PropertyRef Name="AudioId" />
+          </Key>
+          <Property Type="Int32" Name="AudioId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="Binary" Name="Audio" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="FileName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DateTime" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <Property Type="Int32" Name="AppointmentId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dicom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="DateTime" Name="DateTime" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="ProviderId" Nullable="false" />
+          <Property Type="Guid" Name="UniqueIdentifier" Nullable="false" />
+          <Property Type="String" Name="Subject" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Dicom1" Nullable="false" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eHealthCareModelStoreContainer" CdmEntityContainer="eHealthCareEntities">
+          <EntitySetMapping Name="AllergyReactions">
+            <EntityTypeMapping TypeName="eHealthCareModel.AllergyReaction">
+              <MappingFragment StoreEntitySet="AllergyReaction">
+                <ScalarProperty Name="Reaction" ColumnName="Reaction" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllergyTypes">
+            <EntityTypeMapping TypeName="eHealthCareModel.AllergyType">
+              <MappingFragment StoreEntitySet="AllergyType">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BloodPressures">
+            <EntityTypeMapping TypeName="eHealthCareModel.BloodPressure">
+              <MappingFragment StoreEntitySet="BloodPressures">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="IrregularHeartbeat" ColumnName="IrregularHeartbeat" />
+                <ScalarProperty Name="Pulse" ColumnName="Pulse" />
+                <ScalarProperty Name="Diastolic" ColumnName="Diastolic" />
+                <ScalarProperty Name="Systolic" ColumnName="Systolic" />
+                <ScalarProperty Name="When" ColumnName="When" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Conditions">
+            <EntityTypeMapping TypeName="eHealthCareModel.Condition">
+              <MappingFragment StoreEntitySet="Conditions">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Recovered" ColumnName="Recovered" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="eHealthCareModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="ZipOrPostalCode" ColumnName="ZipOrPostalCode" />
+                <ScalarProperty Name="StateOrProvince" ColumnName="StateOrProvince" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StreetAddress3" ColumnName="StreetAddress3" />
+                <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+                <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+                <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DietaryIntakes">
+            <EntityTypeMapping TypeName="eHealthCareModel.DietaryIntake">
+              <MappingFragment StoreEntitySet="DietaryIntakes">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Calories" ColumnName="Calories" />
+                <ScalarProperty Name="Meal" ColumnName="Meal" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distances">
+            <EntityTypeMapping TypeName="eHealthCareModel.Distance">
+              <MappingFragment StoreEntitySet="Distances">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Distance1" ColumnName="Distance" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Elevations">
+            <EntityTypeMapping TypeName="eHealthCareModel.Elevation">
+              <MappingFragment StoreEntitySet="Elevations">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Elevation1" ColumnName="Elevation" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Heights">
+            <EntityTypeMapping TypeName="eHealthCareModel.Height">
+              <MappingFragment StoreEntitySet="Heights">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="HeightInch" ColumnName="HeightInch" />
+                <ScalarProperty Name="HeightFeet" ColumnName="HeightFeet" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Insurances">
+            <EntityTypeMapping TypeName="eHealthCareModel.Insurance">
+              <MappingFragment StoreEntitySet="Insurances">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="SubscriberDOB" ColumnName="SubscriberDOB" />
+                <ScalarProperty Name="SubscriberDate" ColumnName="SubscriberDate" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+                <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+                <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+                <ScalarProperty Name="CoverageType" ColumnName="CoverageType" />
+                <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicationDoses">
+            <EntityTypeMapping TypeName="eHealthCareModel.MedicationDose">
+              <MappingFragment StoreEntitySet="MedicationDose">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medications">
+            <EntityTypeMapping TypeName="eHealthCareModel.Medication">
+              <MappingFragment StoreEntitySet="Medications">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ReasonForTaking" ColumnName="ReasonForTaking" />
+                <ScalarProperty Name="HowTaken" ColumnName="HowTaken" />
+                <ScalarProperty Name="DoseText" ColumnName="DoseText" />
+                <ScalarProperty Name="DoseUnit" ColumnName="DoseUnit" />
+                <ScalarProperty Name="StrengthText" ColumnName="StrengthText" />
+                <ScalarProperty Name="StrengthUnit" ColumnName="StrengthUnit" />
+                <ScalarProperty Name="MedicationName" ColumnName="MedicationName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicationStregths">
+            <EntityTypeMapping TypeName="eHealthCareModel.MedicationStregth">
+              <MappingFragment StoreEntitySet="MedicationStregth">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicationTakens">
+            <EntityTypeMapping TypeName="eHealthCareModel.MedicationTaken">
+              <MappingFragment StoreEntitySet="MedicationTaken">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NutritionInfos">
+            <EntityTypeMapping TypeName="eHealthCareModel.NutritionInfo">
+              <MappingFragment StoreEntitySet="NutritionInfos">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Folate_DFE" ColumnName="Folate-DFE" />
+                <ScalarProperty Name="Thiamin" ColumnName="Thiamin" />
+                <ScalarProperty Name="Riboflavin" ColumnName="Riboflavin" />
+                <ScalarProperty Name="Niacin" ColumnName="Niacin" />
+                <ScalarProperty Name="Vitamin_K" ColumnName="Vitamin-K" />
+                <ScalarProperty Name="Vitamin_E" ColumnName="Vitamin-E" />
+                <ScalarProperty Name="Vitamin_D" ColumnName="Vitamin-D" />
+                <ScalarProperty Name="Vitamin_C" ColumnName="Vitamin-C" />
+                <ScalarProperty Name="Vitamin_B12" ColumnName="Vitamin-B12" />
+                <ScalarProperty Name="Vitamin_B6" ColumnName="Vitamin-B6" />
+                <ScalarProperty Name="VitaminA_RAE" ColumnName="VitaminA-RAE" />
+                <ScalarProperty Name="Zinc" ColumnName="Zinc" />
+                <ScalarProperty Name="Potassium" ColumnName="Potassium" />
+                <ScalarProperty Name="Phosphorus" ColumnName="Phosphorus" />
+                <ScalarProperty Name="Magnesium" ColumnName="Magnesium" />
+                <ScalarProperty Name="Iron" ColumnName="Iron" />
+                <ScalarProperty Name="Sodium" ColumnName="Sodium" />
+                <ScalarProperty Name="Cholesterol" ColumnName="Cholesterol" />
+                <ScalarProperty Name="DietaryFiber" ColumnName="DietaryFiber" />
+                <ScalarProperty Name="Sugars" ColumnName="Sugars" />
+                <ScalarProperty Name="TransFat" ColumnName="TransFat" />
+                <ScalarProperty Name="PolyunsaturatedFat" ColumnName="PolyunsaturatedFat" />
+                <ScalarProperty Name="MonounsaturatedFat" ColumnName="MonounsaturatedFat" />
+                <ScalarProperty Name="SaturatedFat" ColumnName="SaturatedFat" />
+                <ScalarProperty Name="TotalFat" ColumnName="TotalFat" />
+                <ScalarProperty Name="Protein" ColumnName="Protein" />
+                <ScalarProperty Name="Carbohydrates" ColumnName="Carbohydrates" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientNotes">
+            <EntityTypeMapping TypeName="eHealthCareModel.PatientNote">
+              <MappingFragment StoreEntitySet="PatientNotes">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="eHealthCareModel.Patient">
+              <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Procedures">
+            <EntityTypeMapping TypeName="eHealthCareModel.Procedure">
+              <MappingFragment StoreEntitySet="Procedures">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="SecondaryProviderId" ColumnName="SecondaryProviderId" />
+                <ScalarProperty Name="PrimaryProviderId" ColumnName="PrimaryProviderId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ProcedureName" ColumnName="ProcedureName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Providers">
+            <EntityTypeMapping TypeName="eHealthCareModel.Provider">
+              <MappingFragment StoreEntitySet="Providers">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specialties">
+            <EntityTypeMapping TypeName="eHealthCareModel.Specialty">
+              <MappingFragment StoreEntitySet="Specialties">
+                <ScalarProperty Name="SpecialityName" ColumnName="SpecialityName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Steps">
+            <EntityTypeMapping TypeName="eHealthCareModel.Step">
+              <MappingFragment StoreEntitySet="Steps">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Steps" ColumnName="Steps" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Weights">
+            <EntityTypeMapping TypeName="eHealthCareModel.Weight">
+              <MappingFragment StoreEntitySet="Weights">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="WeightGoal" ColumnName="WeightGoal" />
+                <ScalarProperty Name="Weight1" ColumnName="Weight" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="eHealthCareModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointments">
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+                <ScalarProperty Name="SpecialtyId" ColumnName="SpecialtyId" />
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AudioAppointments">
+            <EntityTypeMapping TypeName="eHealthCareModel.AudioAppointment">
+              <MappingFragment StoreEntitySet="AudioAppointments">
+                <ScalarProperty Name="AppointmentId" ColumnName="AppointmentId" />
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Audio" ColumnName="Audio" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="AudioId" ColumnName="AudioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dicoms">
+            <EntityTypeMapping TypeName="eHealthCareModel.Dicom">
+              <MappingFragment StoreEntitySet="Dicom">
+                <ScalarProperty Name="Dicom1" ColumnName="Dicom" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

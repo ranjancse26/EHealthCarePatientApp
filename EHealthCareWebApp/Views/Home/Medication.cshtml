@@ -1,0 +1,87 @@
+﻿@model IEnumerable<EHealthCareWebApp.Models.MedicationViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-HealthCare - Medications</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="grid_container" class="ui-iggrid ui-widget ui-helper-clearfix ui-corner-all" tabindex="0" >
+            <table id="grid" class="ui-iggrid-table ui-widget-content">
+                    <thead>
+                        <tr data-header-row="">
+                        <th id="grid_1" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Medication Name</span>
+                        </th>
+                        <th id="grid_2" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Start Date</span>
+                        </th>   
+                        <th id="grid_3" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">End Date</span>
+                        </th>
+                        <th id="grid_4" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Strength</span>
+                        </th>
+                        <th id="grid_5" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">How Taken</span>
+                        </th>
+                        <th id="grid_6" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Reason</span>
+                        </th>                                         
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var medication in Model)
+                    {
+                        <tr>
+                            <td>                                    
+                                @Html.DisplayFor(model => medication.MedicationName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => medication.StartDate)
+                            </td>   
+                             <td>                                    
+                                @Html.DisplayFor(model => medication.EndDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => medication.Strength)
+                            </td>   
+                             <td>                                    
+                                @Html.DisplayFor(model => medication.HowTaken)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => medication.ReasonForTaking)
+                            </td>                                      
+                        </tr>   
+                    }
+                    </tbody>
+                </table>
+        </div> 
+</body>
+</html>
+
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+<link href="../../Content/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link href="../../Content/structure/infragistics.css" rel="stylesheet" />
+
+<script src="../../Scripts/jquery-ui-1.8.20.min.js"></script>
+<script src="../../Scripts/infragistics.util.js"></script>
+<script src="../../Scripts/infragistics.core.js"></script>
+<script src="../../Scripts/infragistics.lob.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#grid").igGrid({
+            defaultColumnWidth: 150
+        });
+
+    });
+ </script>

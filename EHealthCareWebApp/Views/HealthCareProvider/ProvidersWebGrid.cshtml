@@ -1,0 +1,77 @@
+﻿@model IEnumerable<EHealthCareWebApp.Models.Provider>
+
+@{
+    var grid = new WebGrid(Model, canPage: false, canSort:false, defaultSort: "Name");
+}
+
+@if (Model.Count() == 0)
+{
+    <p>No data found</p>
+}
+else
+{   
+   @grid.GetHtml(htmlAttributes: new {id ="grid"}, 
+    headerStyle: "webgrid-header",
+    footerStyle: "webgrid-footer",
+    alternatingRowStyle: "webgrid-row-style",
+    selectedRowStyle: "webgrid-selected-row",
+    rowStyle: "webgrid-row-style",
+    columns: grid.Columns(
+            grid.Column("Name", format: @<text>@item.Name</text>),
+            grid.Column("Npi", format: @<text>@item.Npi</text>),
+            grid.Column("Longitude", format: @<text>@item.Longitude</text>),
+            grid.Column("Latitude", format: @<text>@item.Latitude</text>),
+            grid.Column("Address", format: @<text>@item.Address</text>),
+            grid.Column("Locality", format: @<text>@item.Locality</text>) ,
+            grid.Column("Region", format: @<text>@item.Region</text>)           
+            )
+     )
+}
+
+<div id="map" style="height: 350px; width:600px; margin:10px 0;float:right"></div>    
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<link href="http://www.google.com/uds/css/gsearch.css" rel="stylesheet" type="text/css"/> 
+
+<link href="../../Content/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link href="../../Content/structure/infragistics.css" rel="stylesheet" />
+
+<script src="../../Scripts/infragistics.util.js"></script>
+<script src="../../Scripts/infragistics.core.js"></script>
+<script src="../../Scripts/infragistics.lob.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#grid").igGrid({
+            defaultColumnWidth: 150
+        });
+        
+        $('#grid tr').click(function (event) {
+            displayMap($(this).find("td").eq(3).html(), $(this).find("td").eq(2).html());
+        });      
+    });
+
+    // Our global state
+    var gMap;
+
+    function displayMap(latitude, longitude) {
+        gMap = new google.maps.Map(document.getElementById("map"), {
+            center: new google.maps.LatLng(latitude, longitude),
+            zoom: 15,
+            mapTypeId: 'roadmap'
+        });
+
+        var myLatlng = new google.maps.LatLng(latitude, longitude);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: gMap,
+            title: "You are here!"
+        });
+    }
+
+</script>
+

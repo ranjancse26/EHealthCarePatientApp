@@ -1,0 +1,714 @@
+/*  =PILL IDENTIFIER MODULE
+------------------------------------------------------- */
+#pill_identifier_fmt {
+margin: 0;
+padding: 0;
+}
+#pill_identifier_fmt #blanket {
+background: #f7f7f7;
+_background: #f7f7f7;
+display: none;
+height: 100%;
+_height: 1000px;
+left: 0;
+position: fixed;
+_position: absolute;
+top: 0;
+width: 100%;
+_width:  1600px;
+z-index: 0;
+}
+#pill_identifier_fmt h1 {
+color: #a7bf48;
+font-size: 180%;
+font-weight: normal;
+margin: 0;
+}
+#pill_identifier_fmt .pill_id_terms_fmt {
+margin: 0;
+padding: 0 0 5px 0;
+}
+#pill_identifier_fmt .pill_id_terms_fmt img {
+border: none;
+}
+#pill_identifier_fmt .clearboth {
+clear: both;
+}
+#pill_identifier_fmt  fieldset {
+border: none;
+}
+#pill_identifier_fmt  #srch-drug-pillid {
+
+}
+
+/*  =PILL IDENTIFIER FORM
+------------------------------------------------------- */
+#pill_identifier_fmt #srch-drug-pillid {
+/*background: url("http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/miscellaneous/pill_identifier/pill_id_search_bg.jpg") 0 0 no-repeat; /* abs url for ny testing */
+margin: 0;
+padding: 0; /* 0 0 50px 0 */
+position: relative;
+width: 467px;
+}
+#pill_identifier_fmt #srch-drug-pillid h2 {
+color: #333;
+font-size: 110%;
+font-weight: bold;
+margin: 0;
+padding: 8px;
+}
+#pill_identifier_fmt #srch-drug-pillid fieldset {
+border: 0;
+margin: 0;
+padding: 0;
+}
+#pill_identifier_fmt #srch-drug-pillid p {
+font-size: 85%;
+margin: 0;
+padding: 8px 23px 0 8px;
+}
+#pill_identifier_fmt #srch-drug-pillid label {
+color: #3FA0CF;
+display: block;
+float: left;
+font-weight: bold;
+margin: 0 15px 5px 0; /* 0 0 5px 0; use when question pop up is implemented */
+}
+#pill_identifier_fmt .frmPillIdentifier-field-fmt {
+clear: both;
+padding: 5px 0 5px 8px;
+}
+#pill_identifier_fmt .frmPillIdentifier-field-fmt img {
+display: inline-block;
+float: left;
+margin: 0 15px 3px 7px;
+padding: 0;
+}
+#pill_identifier_fmt .frmPillIdentifier-field-fmt .radio-color {
+display: none; /* not ready for this yet */
+float: left;
+padding: 0px 10px 0px 10px;
+text-align: left;
+}
+#pill_identifier_fmt .frmPillIdentifier-field-fmt .swatch-color {
+float: left;
+}
+#pill_identifier_fmt .frmPillIdentifier-field-fmt #simprint, #pill_identifier_fmt .frmPillIdentifier-field-fmt #sshape, #pill_identifier_fmt .frmPillIdentifier-field-fmt #scolor {
+border: 1px solid #a5acb2;
+font-size: 12px;
+padding: 0;
+}
+#pill_identifier_fmt .frmPillIdentifier-field-fmt #simprint {
+height: 17px;
+padding: 0px 0 2px 3px;
+_padding: 2px 0 0px 3px;
+width: 180px;
+}
+*+html #pill_identifier_fmt .frmPillIdentifier-field-fmt #simprint {
+padding: 2px 0 0px 3px;
+}
+#pill_identifier_fmt .frmPillIdentifier-field-fmt #scolor, #pill_identifier_fmt .frmPillIdentifier-field-fmt #sshape {
+height: 20px;
+width: 140px;
+}
+#pill_identifier_fmt .frmPillIdentifier_submit_fmt {
+margin: 0px 17px 0 0;
+text-align: right;
+}
+
+/* swatches */
+#pill_identifier_fmt img {
+border: 0;
+}
+#pill_identifier_fmt .shim {
+width: auto;
+height: auto;
+position: absolute;
+top: 0;
+left: 0;
+filter: alpha(opacity=0);
+-moz-opacity: 0.80;
+opacity: 0.80;
+z-index: -1;
+}
+#pill_identifier_fmt select {
+	z-index: 0;	
+}
+
+/* solid color swatch */
+#pill_identifier_fmt .colorContent {
+background-color: #fff;
+left: 130px;
+_left: 134px;
+margin-top:  -1px;
+_margin-top: 18px;
+position: absolute;
+z-index: 10000;
+}
+#pill_identifier_fmt .colorContent ul li {
+display: inline !important;
+}
+*+html #pill_identifier_fmt .colorContent {
+margin-top: 18px;
+}
+#pill_identifier_fmt .overlay {
+background-color: #fff;
+display: none;
+}
+#pill_identifier_fmt #colorSwatch {
+background-color: #fff;
+border: 1px solid #a5acb2;
+height: 387px;
+_height: 385px;
+width: 280px;
+_width: 277px;
+}
+#pill_identifier_fmt .pillcolor-solid {
+background: url("http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/miscellaneous/pill_identifier/pill_id_color_solid_sprite.gif") no-repeat top left; /* abs url for ny testing */
+display: block;
+height: 75px;
+margin: 0;
+padding: 0;
+width: 90px;
+}
+#pill_identifier_fmt .pillcolor-solid a {
+display: block;
+height: 76px;
+margin: 0px 0 0 2px;
+padding: 0;
+width: 88px;
+}
+#pill_identifier_fmt .pillcolor-solid a:hover {
+border: 1px solid #a5acb2; 
+_height: 73px;
+_margin: 0;
+_padding:0;
+_width: 88px;
+}	
+#pill_identifier_fmt .colorContent ul {
+display: block;
+height: 75px;
+margin: 0;
+padding: 0;
+}
+*+html #pill_identifier_fmt .colorContent ul {
+margin: 0 0 2px 0;
+}
+#pill_identifier_fmt .colorContent li {
+width: 90px;
+height: 77px;
+float: left;
+padding: 0px !important;
+margin: 1px !important;
+_margin: 0px;
+_padding: 0px;
+}
+#pill_identifier_fmt li.pillcolor-solid img{border: none;}
+#pill_identifier_fmt li.pc-solid-white{background-position: -1px -2px;}
+#pill_identifier_fmt li.pc-solid-offwhite{background-position: -87px -2px;}
+#pill_identifier_fmt li.pc-solid-clear{background-position: -174px -2px;}
+#pill_identifier_fmt li.pc-solid-black{background-position: -1px -76px;}
+#pill_identifier_fmt li.pc-solid-gray{background-position: -87px -76px;}
+#pill_identifier_fmt li.pc-solid-brown{background-position: -174px -76px;}
+#pill_identifier_fmt li.pc-solid-tan{background-position: -1px -149px;}
+#pill_identifier_fmt li.pc-solid-red{background-position: -87px -149px;}
+#pill_identifier_fmt li.pc-solid-pink{background-position: -174px -149px;}
+#pill_identifier_fmt li.pc-solid-orange{background-position: -1px -220px;}
+#pill_identifier_fmt li.pc-solid-peach{background-position: -87px -220px;}
+#pill_identifier_fmt li.pc-solid-yellow{background-position: -173px -220px;}
+#pill_identifier_fmt li.pc-solid-green{background-position: 0px -293px;}
+#pill_identifier_fmt li.pc-solid-blue{background-position: -87px -293px;}
+#pill_identifier_fmt li.pc-solid-purple{background-position: -173px -293px;}
+
+/* multi color swatch */
+#pill_identifier_fmt .colorContentMulti {
+background-color: #fff;
+left: 31px;
+_left: 29px;
+margin-top: -1px;
+_margin-top: 18px;
+position: absolute;
+z-index: 10000;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#pill_identifier_fmt .colorContentMulti {left: 1px;}
+}
+*+html #pill_identifier_fmt .colorContentMulti {
+margin-top: 18px;
+}
+#pill_identifier_fmt .overlay {
+background-color: #fff;
+display: none;
+}
+#pill_identifier_fmt #colorSwatchMulti {
+background-color: #fff;
+border: 1px solid #a5acb2;
+height: 387px;
+_height: 385px;
+width: 278px;
+_width: 277px;
+}
+#pill_identifier_fmt .pillcolor-multi {
+background: url("http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/miscellaneous/pill_identifier/pill_id_color_multi_sprite.gif") no-repeat top left; /* abs url for ny testing */
+height: 75px;
+margin: 0;
+padding: 0;
+width: 90px;
+}
+#pill_identifier_fmt .pillcolor-multi a {
+display: block;
+height: 75px;
+margin: 0;
+padding: 0;
+width: 90px;
+}
+#pill_identifier_fmt .pillcolor-multi a:hover {
+border: 1px solid #a5acb2;
+_height: 73px;
+_margin: 0;
+_padding: 0;
+_width: 88px;
+}	
+#pill_identifier_fmt .colorContent ul {
+display: block;
+height: 75px;
+margin: 0;
+padding: 0;
+}
+#pill_identifier_fmt .colorContent li {
+width: 90px;
+height: 77px;
+float: left;
+padding: 0px;
+margin: 1px ;
+}
+#pill_identifier_fmt .colorContent li p {
+height: 1px;
+left: -10000px;
+overflow: hidden;
+margin: 0px;
+padding: 0px;
+position: absolute;
+top: auto;
+width: 1px;
+}
+#pill_identifier_fmt li.pillcolor-multi img{border: none;}
+#pill_identifier_fmt li.pc-multi-white{background-position: 0px 0px;}
+#pill_identifier_fmt li.pc-multi-offwhite{background-position: -87px 0px;}
+#pill_identifier_fmt li.pc-multi-clear{background-position: -175px 0px;}
+#pill_identifier_fmt li.pc-multi-black{background-position: -0px -76px;}
+#pill_identifier_fmt li.pc-multi-gray{background-position: -87px -76px;}
+#pill_identifier_fmt li.pc-multi-brown{background-position: -175px -76px;}
+#pill_identifier_fmt li.pc-multi-tan{background-position: -0px -148px;}
+#pill_identifier_fmt li.pc-multi-red{background-position: -87px -148px;}
+#pill_identifier_fmt li.pc-multi-pink{background-position: -175px -148px;}
+#pill_identifier_fmt li.pc-multi-orange{background-position: -0px -220px;}
+#pill_identifier_fmt li.pc-multi-peach{background-position: -87px -220px;}
+#pill_identifier_fmt li.pc-multi-yellow{background-position: -175px -220px;}
+#pill_identifier_fmt li.pc-multi-green{background-position: -0px -293px;}
+#pill_identifier_fmt li.pc-multi-blue{background-position: -87px -293px;}
+#pill_identifier_fmt li.pc-multi-purple{background-position: -175px -293px;}
+
+/* shape swatch */
+#pill_identifier_fmt .shapeContent {
+background-color: #fff;
+left: 126px;
+_left: 129px;
+margin-top:  -1px;
+_margin-top: 18px;
+position: absolute;
+z-index: 10000;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#pill_identifier_fmt .shapeContent {left: 1px;}
+}
+*+html #pill_identifier_fmt .shapeContent {
+margin-top: 18px;
+}
+#pill_identifier_fmt #shapeSwatch {
+background-color: #fff;
+border: 1px solid #a5acb2;
+height: 206px;
+_height: 204px;
+width: 290px;
+_width: 289px;
+}
+#pill_identifier_fmt #shapeSwatch ul li{
+display:inline !important;
+}
+#pill_identifier_fmt .pillshape {
+background: url("http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/miscellaneous/pill_identifier/pill_id_shape_sprite.gif") no-repeat top left; /* abs url for ny testing */
+display: block;
+}
+#pill_identifier_fmt .pillshape a {
+display: block;
+height: 66px;
+margin: 0 0 0 2px;
+padding: 0;
+width: 67px;
+}
+#pill_identifier_fmt .pillshape a:hover {
+border: 1px solid #a5acb2;
+_height: 64px;
+_margin: 0;
+_padding: 0;
+_width: 68px;
+}
+#pill_identifier_fmt .shapeContent ul {
+display:block;
+height:66px;
+margin:0;
+padding:0;
+}
+*+html #pill_identifier_fmt .shapeContent ul {
+margin: 0 0 2px 0;
+}
+#pill_identifier_fmt .shapeContent li {
+width: 70px;
+height: 66px;
+float: left;
+padding: 0px;
+margin: 1px;
+}
+#pill_identifier_fmt .shapeContent li p {
+height: 1px;
+left: -10000px;
+overflow: hidden;
+margin: 0px;
+padding: 0px;
+position: absolute;
+top: auto;
+width: 1px;
+}
+#pill_identifier_fmt li.pillshape img{border: none;}
+#pill_identifier_fmt li.ps-circle{background-position: 0px 0px;}
+#pill_identifier_fmt li.ps-oblong{background-position: -78px 0px;}
+#pill_identifier_fmt li.ps-oval{background-position: -155px 0px;}
+#pill_identifier_fmt li.ps-square{background-position: -227px 0px;}
+#pill_identifier_fmt li.ps-rectangle{background-position: -1px -63px;}
+#pill_identifier_fmt li.ps-diamond{background-position: -78px -63px;}
+#pill_identifier_fmt li.ps-triangle{background-position: -153px -63px;}
+#pill_identifier_fmt li.ps-pentagon{background-position: -226px -63px;}
+#pill_identifier_fmt li.ps-hexagon{background-position: -1px -130px;}
+#pill_identifier_fmt li.ps-heptagon{background-position: -80px -130px;}
+#pill_identifier_fmt li.ps-octagon{background-position: -152px -130px;}
+#pill_identifier_fmt li.ps-other{background-position: -226px -130px;}
+
+/*  =PILL RESULTS MODULE
+------------------------------------------------------- */
+#dr-pill-results {
+margin: 20px 10px 0px !important;
+}
+#dr-pill-results h2 {
+color: #a7bf48;
+display: inline;
+font-size: 160%;
+font-weight: normal;
+margin: 0;	
+}
+#dr-pill-results #searchToggle {
+margin-left: 8px;	
+}
+#dr-pill-results .drug_numresults {
+color: #666;
+float: left;	
+padding-top: 3px;
+}
+#dr-pill-results .drug_show span {
+color: #a7bf48;
+font-weight: bold;
+padding-right: 5px;
+}
+#dr-pill-results .drug_pages {
+float: right;	
+}
+#dr-pill-results .drug_pagination {
+border-top: 1px solid #ebebeb;
+border-bottom: 1px solid #ebebeb;
+margin: 10px 0px 10px 0px;
+padding: 5px 5px 5px 5px;
+}
+#dr-pill-results span {
+display: inline;
+}
+#dr-pill-results .prevNext {
+vertical-align: top;
+_vertical-align: middle;
+}
+*+html #dr-pill-results .prevNext {
+vertical-align: middle;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#dr-pill-results .prevNext {vertical-align: middle;}
+}
+#dr-pill-results .number_fmt {
+line-height: 22px;
+padding: 0px 2px 0px 2px;
+}
+#dr-pill-results .drug_container {
+border-bottom:1px solid #ebebeb;
+margin:10px 0px 10px 0px;
+}
+#dr-pill-results .drug_img {
+float: left;
+height: 79px;
+width: 102px;
+}
+#dr-pill-results .drug_info {
+float: left;
+margin: 0px 0px 10px 10px;
+width: 370px;
+}
+#dr-pill-results .drug_name span.drug {
+color: #3789b9;
+font-size: 110%;
+font-weight: bold;
+margin-right: 7px;
+}
+#dr-pill-results .drug_name span.rev {
+font-size: 80%;
+}
+
+/*  =FIND A DRUG MODULE
+------------------------------------------------------- */
+.srch-drug-rdr {
+clear: both;
+display: block;
+margin: 10px 0px 0px 0px;
+padding: 0px;
+}
+.srch-drug-rdr h2 {
+color: #a7bf48;
+font-size: 160%;
+font-weight: normal;
+margin: 0 0 0 10px;
+}
+.srch-drug-rdr .hr {
+border-top: 1px solid #dee5d5;
+clear: both;
+font-size: 1%;
+margin: 0 0 10px 0;
+padding: 0px;
+}
+.srch-drug-rdr label {
+font-weight: bold;
+}
+.srch-drug-rdr span {
+display: block;
+font-size: 90%;
+padding-left: 25px;
+}
+.srch-drug-rdr .name-condition {
+float: left;
+margin: 0 0 0 5px;
+width:160px;
+}
+.srch-drug-rdr .drug-query {
+float: left;
+padding-top:16px;
+width: 300px;
+}
+.srch-drug-rdr  #drug-suggest-wrap {
+display: inline;
+}
+.srch-drug-rdr input.drug-query_fmt {
+font-size: 12px;
+outline: 0;
+padding: 1px 0 3px 3px;
+margin: 0 5px 2px 0;
+_margin: 5px 5px 2px 0;
+width: 220px
+}
+*+html .srch-drug-rdr input.drug-query_fmt {
+margin: 3px 5px 2px 0;
+}
+.srch-drug-rdr input.submit_btn_fmt {
+margin: 5px 0 0 0;
+_margin: 0;
+vertical-align: bottom;
+}
+*+html .srch-drug-rdr input.submit_btn_fmt {
+margin: 0;
+vertical-align: top;
+}
+.pill_id_search2_label_fmt {
+float: left;
+width: 155px;
+}
+#pill_id_search2_txt_fmt {
+margin: 0 10px 0 0;
+padding: 0;
+vertical-align: bottom;
+width: 255px;
+}
+#pill_id_search2_submit_fmt {
+margin: 4px 0 0 0;
+padding: 0;
+vertical-align: bottom;
+}
+
+/*  =FEATURE SLIDESHOW MODULE
+------------------------------------------------------- */
+#feature-slideshow-rdr {
+margin: 20px 0px 20px 0px;
+padding: 0px;
+}
+#feature-slideshow-rdr h2 {
+color: #a7bf48;
+font-size: 160%;
+font-weight: normal;
+margin: 0 0 0 10px;
+}
+#feature-slideshow-rdr .hr {
+border-top: 1px solid #dee5d5;
+font-size: 1%;
+margin: 0 0 10px 0;
+padding: 0px;
+}
+#feature-slideshow-rdr .img-left {
+float: left;
+margin: 0 0 0 10px ;
+padding-top: 5px;
+width: 125px;
+}
+#feature-slideshow-rdr .copy-right {
+float: left;
+width: 260px;
+}
+#feature-slideshow-rdr p {
+font-size: 100%;
+font-weight: bold;
+margin: 0;
+}
+#feature-slideshow-rdr p.blue {
+font-size: 100%;
+font-weight: bold;
+margin: 0;
+}
+/* disclaimer */
+.pill-id-disclaimer-fmt {
+padding: 0px 10px 5px 10px;
+}
+.pill-id-disclaimer-fmt p {
+color:  #aea9a3;
+font-size: 75%;
+}
+
+/*  =FDA MODULE
+------------------------------------------------------- */
+#fdaWrapper465{
+background: transparent url("http://www.rxlist.com/images/RxList/fda-box-RxList-wide.gif") no-repeat scroll left top;
+display: block;
+height: 91px;
+margin: 0 auto;
+padding: 0;
+width: 465px;
+}
+#fdaWrapper301{
+background:transparent url("http://www.rxlist.com/images/RxList/fda-box-RxList-tall.gif") repeat scroll 0%;
+display: block;
+height: 100px;
+margin: 0;
+padding: 0;
+width: 301px;
+}
+#fdaContainer {
+display: block;
+height: 91px;
+width: 465px;
+}
+#fdaTitleWide {
+clear: both;
+font-size: 12px;
+font-weight: bold;
+line-height: 34px;
+text-indent: 20px;
+}
+#fdaTitleTall {
+clear: both;
+font-size: 12px;
+font-weight: bold;
+line-height: 34px;
+text-indent: 10px;
+}
+#fdaContentWide {
+display: block;
+float: left;
+padding-top: 6px;
+text-align: left;
+width: 420px;
+}
+#fdaContentTall {
+display: block;
+float: left;
+padding-top: 8px;
+text-align: left;
+width: 280px;
+}
+#fdaMarginLeftWide {
+display: block;
+float: left;
+height: 59px;
+width: 20px;
+}
+#fdaMarginLeftTall {
+display: block;
+float: left;
+height: 59px;
+width: 10px;
+}
+
+/*  =Imprints AJAX
+------------------------------------------------------- */
+#srch-drug-pillid{
+position:relative;
+}
+form#frmPillIdentifier #drug-pill-imprints-wrap {
+background:#c6c6c6;
+font: 10px arial, tahoma;
+margin: 0;
+padding: 0;
+position: absolute;
+right: 107px;
+_right: 102px;
+top: 112px;
+width: 186px;
+_width: 175px;
+z-index: 1000;
+}
+#drug-pill-imprints-suggest {
+background: #fff;
+border: 1px solid #888;
+bottom: 1px;
+display: block;
+overflow: hidden;
+position: relative;
+right: 1px;
+}
+#drug-pill-imprints-suggest div {
+margin: 0;
+padding: 2px 5px;
+position: relative;
+width: 100%;
+}
+#drug-pill-imprints-suggest p {
+color: #000;
+font-size: 100%;
+margin: 0;
+width: 180px;
+padding: 0 0 0 0 !important;
+}
+div.selected { 
+	background-color: #ffb;
+	cursor: pointer;
+}
+.jawsonly {
+height:1px;
+overflow:hidden;
+position:absolute;
+top:auto;
+width:1px;
+}
+#termsOfUse {
+	margin: 0 0 0 10px;	
+}

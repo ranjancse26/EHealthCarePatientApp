@@ -1,0 +1,144 @@
+﻿@{
+    Layout = null;
+}
+@model EHealthCareWebApp.Models.WeightDataViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-HealthCare - Weight</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../Content/main.css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://mapize.com/projects/fx/css/leaflet.css" />
+	<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://mapize.com/projects/fx/css//leaflet.ie.css" />
+	<![endif]-->
+</head>
+<body>
+ <section class="section alt" id="weight">
+		<div class="container" id="container_weight" style="top: -419px; left: 150px;">
+			<div class="row">
+				<div class="span8">
+					<h1 class="sectiontitle">Weight</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span4">
+					<div class="row">
+						<div class="span2">
+							<h4 class="datatitle">Today</h4>
+							<div class="bigchiffre">
+								<span class="data weight">
+									@Model.WeightRelatedItem.MostRecentWeight </span> 
+								<span class="unit weight">lbs</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span2">
+							<h4 class="datatitle">Last month's change</h4>
+							<div class="bigchiffre">
+								<span class="data weight">
+									@Model.WeightRelatedItem.LastMonthsChange</span> 
+								<span class="unit weight">lbs</span>
+							</div>
+						</div>
+						<div class="span2">
+							<h4 class="datatitle">Min.<br> weight</h4>
+							<div class="bigchiffre">
+								<span class="data weight">
+									@Model.WeightRelatedItem.MinWeight 	</span> 
+								<span class="unit weight">lbs</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span8" id="theweight">
+					<canvas id="graph_weight" data-type="Line" width="770" height="400" ></canvas>
+					<div id="legend-weight">
+						<div class="legendlabel">
+							<div class="rect" style="background:#40BCD7;"></div>
+							<div class="title">Weight</div>
+						</div>
+						<div class="legendlabel">
+							<div class="rect" style="background:#716ec4;"></div>
+							<div class="title">Goal</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+<!-- 		<div class="bottom">
+			<div class="container">
+				<div class="row">
+					<div class="span2 time">06:14 am</div>
+					<div class="span10 quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
+				</div>
+			</div>
+		</div> -->
+	</section>
+</body>
+</html>
+
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+<script src="../../Scripts/plugs.js"></script>
+<script src="../../Scripts/otherChart.js"></script>
+
+<script type="text/javascript">
+
+    var lineGraphOpts = {
+        scaleFontColor : "#0C2B38",
+        scaleLineColor : "rgba(0,0,0,.2)",
+        scaleShowGridLines : false,
+        pointDotStrokeWidth : 0,
+        datasetFill : false,
+        pointDot : false,
+   };
+      
+    @if(Model.WeightDataEntity.Count > 0)
+    {
+    <text>
+        var ChartData = {
+            labels: @Html.Raw(@Model.WeightDataChart.Labels),
+            datasets: [
+                    {
+                        strokeColor : "#40BCD7",
+                        data: @Model.WeightDataChart.WeightData
+                    },
+                    {
+                        strokeColor : "#716ec4",
+                        data: @Model.WeightDataChart.WeightGoalData 
+                    }
+            ]         
+        }
+
+        //Get the canvas & context
+        var c = $('#graph_weight');
+        var ct = c.get(0).getContext('2d');
+        var container = $(c).parent();
+
+        load();
+
+        function load() {
+            c.attr('width', $(container).width()); //max width
+            c.attr('height', $(container).height()); //max height
+
+            //Redraw & reposition content
+            var x = c.width();
+            var y = c.height();
+            ct.font = "20px Calibri";
+
+            ct.fillStyle = "#DDDDDD"; //black
+            ct.fillRect(0, 0, x, y); //fill the canvas
+
+            var resizeText = "Chart.JS";
+            ct.textAlign = "center";
+            ct.fillStyle = "#333333"; //white
+            ct.fillText(resizeText, (x / 2), (y / 2));
+
+            var myLine = new Chart( $('#graph_weight').get(0).getContext("2d") ).Line( ChartData, lineGraphOpts );
+        }
+    </text>
+    }
+ </script>

@@ -1,0 +1,142 @@
+﻿@{
+    Layout = null;
+}
+@model EHealthCareWebApp.Models.BloodPressureDataViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-HealthCare - Steps</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../Content/main.css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://mapize.com/projects/fx/css/leaflet.css" />
+	<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://mapize.com/projects/fx/css//leaflet.ie.css" />
+	<![endif]-->
+</head>
+<body>
+    <div class="container" id="container_weight" style="top: -419px; left: 107.5px;">
+			<div class="row">
+				<div class="span8">
+					<h1 class="sectiontitle">Blood Pressure</h1>
+				</div>        
+                <div class="span8">
+                    <div class="title">Systolic & Diastolic Graph</div>
+                     <canvas id="graph_systolic" data-type="Line" height="400"></canvas>
+                </div>
+                <div class="span2">
+					<div class="row">
+						<div class="span2">
+							<h4 class="datatitle">Most Recent Readings</h4>
+							<div class="bigchiffre">
+								<span class="data weight">
+									@Model.BloodPressureRelatedItem.MostRecentSystolic / @Model.BloodPressureRelatedItem.MostRecentDiastolic</span> 
+								<span class="unit weight">mm HG</span>
+							</div>
+						</div>					
+					</div>				
+				</div>                
+        </div>   
+        <div id="grid_container" class="ui-iggrid ui-widget ui-helper-clearfix ui-corner-all" tabindex="0" >
+         <table id="grid" class="ui-iggrid-table ui-widget-content">
+                   <thead>
+                       <tr data-header-row="">
+                       <th id="grid_1" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">Date</span>
+                       </th>
+                       <th id="grid_2" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">Systolic</span>
+                       </th>
+                       <th id="grid_3" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">Diastolic</span>
+                       </th>
+                       <th id="grid_4" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">Pulse</span>
+                       </th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                    @foreach (var bloodPressureEntity in Model.BloodPressureDataEntity)
+                    {
+                            <tr>
+                                <td>                                    
+                                    @Html.DisplayFor(model => bloodPressureEntity.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => bloodPressureEntity.Diastolic)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => bloodPressureEntity.Systolic)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => bloodPressureEntity.Pulse)
+                                </td>
+                        </tr>   
+                    }
+                    </tbody>
+                </table>
+          </div>
+  </div>
+</body>
+</html>
+
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+<script src="../../Scripts/plugs.js"></script>
+<script src="../../Scripts/otherChart.js"></script>
+
+<link href="../../Content/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link href="../../Content/structure/infragistics.css" rel="stylesheet" />
+
+<script src="../../Scripts/jquery-ui-1.8.20.min.js"></script>
+<script src="../../Scripts/infragistics.util.js"></script>
+<script src="../../Scripts/infragistics.core.js"></script>
+<script src="../../Scripts/infragistics.lob.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#grid").igGrid({
+            defaultColumnWidth: 150
+        });
+
+    });
+
+    var stepsOpts = {
+        scaleShowGridLines : false,
+        scaleLabel : "<%=value%>"
+    };
+    
+    @if(Model.BloodPressureDataEntity.Count > 0)
+    {
+    <text>
+        var SystolicChartData = {
+            labels: @Html.Raw(@Model.BloodPressureDataChart.Labels),
+            datasets: [
+                    {
+                        fillColor : "#f28d66",
+                        strokeColor : "rgba(119,183,49,.5)",
+                        data: @Model.BloodPressureDataChart.SystolicData 
+                    }
+                    ,{
+                        fillColor : "#0d990b",
+                        strokeColor : "rgba(151,187,205,1)",
+                        data : @Model.BloodPressureDataChart.DiastolicData
+                    }
+            ]         
+        }
+
+        //Get the canvas & context
+        var systoicGraph = $('#graph_systolic');
+        var ct = systoicGraph.get(0).getContext('2d');
+        var container = $(systoicGraph).parent();
+
+        load();
+
+        function load() {
+            var myBar = new Chart( $('#graph_systolic').get(0).getContext("2d") ).Bar( SystolicChartData, stepsOpts );
+        }
+    </text>
+    }
+ </script>

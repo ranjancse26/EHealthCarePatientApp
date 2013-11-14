@@ -1,0 +1,124 @@
+﻿@{
+    Layout = null;
+}
+@model EHealthCareWebApp.Models.StepsDataViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-HealthCare - Steps</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../Content/main.css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://mapize.com/projects/fx/css/leaflet.css" />
+	<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://mapize.com/projects/fx/css//leaflet.ie.css" />
+	<![endif]-->
+</head>
+<body>
+
+	<!-- Steps -->
+	<section class="section" id="steps">
+		<div class="container">
+			<div class="row">
+				<div class="span8">
+					<h1 class="sectiontitle">Steps</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span8" id="thesteps">
+					<canvas id="graph_steps" data-type="Bar" height="500"></canvas>
+				</div>                
+			</div>
+
+            <table id="grid" class="ui-iggrid-table ui-widget-content">
+                        <thead>
+                            <tr data-header-row="">
+                            <th id="grid_1" class="ui-iggrid-header ui-widget-header">
+                                <span class="ui-iggrid-headertext">Date</span>
+                            </th>
+                            <th id="grid_2" class="ui-iggrid-header ui-widget-header">
+                                <span class="ui-iggrid-headertext">Steps</span>
+                            </th>                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var stepData in Model.StepsDataEntity)
+                        {
+                            <tr>
+                                    <td>                                    
+                                        @Html.DisplayFor(model => stepData.Date)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(model => stepData.Steps)
+                                    </td>                                      
+                            </tr>   
+                        }
+                        </tbody>
+             </table>
+
+            <div class="legendlabel omega">
+				<div class="rect" style="background:rgba(119,183,49,.5)"></div>
+				<div class="title">Meters / day</div>
+			</div>
+	</section>   
+</body>
+</html>
+
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+<script src="../../Scripts/plugs.js"></script>
+<script src="../../Scripts/otherChart.js"></script>
+
+<link href="../../Content/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link href="../../Content/structure/infragistics.css" rel="stylesheet" />
+
+<script src="../../Scripts/jquery-ui-1.8.20.min.js"></script>
+<script src="../../Scripts/infragistics.util.js"></script>
+<script src="../../Scripts/infragistics.core.js"></script>
+<script src="../../Scripts/infragistics.lob.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#grid").igGrid({
+            defaultColumnWidth: 150
+        });
+
+    });
+
+    var stepsOpts = {
+        scaleShowGridLines : false,
+        scaleLabel : "<%=value%>"
+    };
+
+    @if(Model.StepsDataEntity.Count > 0)
+    {
+    <text>
+        var ChartData = {
+            labels: @Html.Raw(@Model.StepsDataChart.Labels),
+            datasets: [
+                {
+                    fillColor : "rgba(119,183,49,.5)",
+                    strokeColor : "rgba(119,183,49,.5)",
+                    data: @Model.StepsDataChart.StepsData
+                    }
+            ]         
+        }
+
+        //Get the canvas & context
+        var c = $('#graph_steps');
+        var ct = c.get(0).getContext('2d');
+        var container = $(c).parent();
+
+        load();
+
+        function load() {
+            c.attr('width', $(container).width()); //max width
+            c.attr('height', $(container).height()); //max height
+
+            var myBar = new Chart( $('#graph_steps').get(0).getContext("2d") ).Bar( ChartData, stepsOpts );
+        }
+    </text>
+   }
+ </script>

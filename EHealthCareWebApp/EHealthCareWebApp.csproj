@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B296AA79-7FA8-4F14-A324-350C5B38DE27}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EHealthCareWebApp</RootNamespace>
+    <AssemblyName>EHealthCareWebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FactualDriver">
+      <HintPath>..\packages\FactualDriver.1.5.6\lib\FactualDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.0.10.1.1\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\..\..\..\Downloads\HealthCareProvider-master\HealthCareProvider-master\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\packages\MahApps.Metro.0.10.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\DrugController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HealthCareProviderController.cs" />
+    <Compile Include="Controllers\PillIdentifierController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\BloodPressureDataHelper.cs" />
+    <Compile Include="Helpers\AppointmentDataHelper.cs" />
+    <Compile Include="Helpers\Filter.cs" />
+    <Compile Include="Helpers\IRepository.cs" />
+    <Compile Include="Helpers\MedicationDataHelper.cs" />
+    <Compile Include="Helpers\HealthCareProviderRepository.cs" />
+    <Compile Include="Helpers\NewLabelExtensions.cs" />
+    <Compile Include="Helpers\StepsDataHelper.cs" />
+    <Compile Include="Helpers\WebRequestHelper.cs" />
+    <Compile Include="Helpers\WeightDataHelper.cs" />
+    <Compile Include="Models\AppointmentViewModel.cs" />
+    <Compile Include="Models\BloodPressureDataViewModel.cs" />
+    <Compile Include="Models\MedicationViewModel.cs" />
+    <Compile Include="Models\PillInfoEntity.cs" />
+    <Compile Include="Models\Provider.cs" />
+    <Compile Include="Models\ProviderFilter.cs" />
+    <Compile Include="Models\StepsDataViewModel.cs" />
+    <Compile Include="Models\WeightDataViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\factual.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\pill_identifier.css" />
+    <Content Include="Content\structure\images\expand.gif" />
+    <Content Include="Content\structure\images\icon_sprite.png" />
+    <Content Include="Content\structure\images\igBigPauseButton.png" />
+    <Content Include="Content\structure\images\igBigPlayButton.png" />
+    <Content Include="Content\structure\images\igBrowserLogos.png" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_off.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_off_hover.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_on.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_on_hover.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_partial.gif" />
+    <Content Include="Content\structure\images\igCheckbox\ig_checkbox_partial_hover.gif" />
+    <Content Include="Content\structure\images\igGrid\blank.png" />
+    <Content Include="Content\structure\images\igGrid\diagonals-medium.png" />
+    <Content Include="Content\structure\images\igGrid\filter-icons-333333.png" />
+    <Content Include="Content\structure\images\igGrid\filter-icons-FFFFFF.png" />
+    <Content Include="Content\structure\images\igGrid\group-by-label-right-edge.png" />
+    <Content Include="Content\structure\images\igg_BottomDragIndicator.png" />
+    <Content Include="Content\structure\images\igg_Filter.gif" />
+    <Content Include="Content\structure\images\igg_FilterApplied.gif" />
+    <Content Include="Content\structure\images\igg_Fix.gif" />
+    <Content Include="Content\structure\images\igg_FixHover.gif" />
+    <Content Include="Content\structure\images\igg_header.gif" />
+    <Content Include="Content\structure\images\igg_sortAsc.gif" />
+    <Content Include="Content\structure\images\igg_sortDesc.gif" />
+    <Content Include="Content\structure\images\igg_Sprite.png" />
+    <Content Include="Content\structure\images\igg_Sum.gif" />
+    <Content Include="Content\structure\images\igg_SumHover.gif" />
+    <Content Include="Content\structure\images\igg_SumPressed.gif" />
+    <Content Include="Content\structure\images\igg_TopDragIndicator.png" />
+    <Content Include="Content\structure\images\igg_Unfix.gif" />
+    <Content Include="Content\structure\images\igg_UnfixHover.gif" />
+    <Content Include="Content\structure\images\igg_UnfixPressed.gif" />
+    <Content Include="Content\structure\images\igHtmlEditor\arrow_collapse.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\arrow_expand.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\arrow_redo.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\arrow_undo.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\background_color.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\check.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\cut.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\decrease-font-size.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html-editor-sprite.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html_add.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html_delete.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html_go.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\html_valid.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\image_add.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\increase-font-size.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\link.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\link_add.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\link_break.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\page_copy.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\page_paste.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table-delete-column-icon.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table-insert-column-icon.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table_row_delete.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\table_row_insert.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_align_center.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_align_justify.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_align_left.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_align_right.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_bold.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_color.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_horizontalrule.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_indent.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_indent_remove.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_italic.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_list_bullets.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_list_numbers.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_strikethrough.png" />
+    <Content Include="Content\structure\images\igHtmlEditor\text_underline.png" />
+    <Content Include="Content\structure\images\igLoadingSmall.gif" />
+    <Content Include="Content\structure\images\igPivot\dataselector-sprite.png" />
+    <Content Include="Content\structure\images\igPivot\pivot-header-icons.png" />
+    <Content Include="Content\structure\images\igRating\ig-rating-touch%402.png" />
+    <Content Include="Content\structure\images\igRating\ig-rating-touch.png" />
+    <Content Include="Content\structure\images\igTooltip\igTooltipArrowBottom.png" />
+    <Content Include="Content\structure\images\igTooltip\igTooltipArrowLeft.png" />
+    <Content Include="Content\structure\images\igTooltip\igTooltipArrowRight.png" />
+    <Content Include="Content\structure\images\igTooltip\igTooltipArrows.png" />
+    <Content Include="Content\structure\images\igTooltip\igTooltipArrowTop.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igBigPauseButton.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igBigPlayButton.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igLoadingSmall.gif" />
+    <Content Include="Content\structure\images\igVideoPlayer\igPlayButton24.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igPlayButton32.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igPlayButton48.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igVPBackground.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igVPBookmarkSprite.png" />
+    <Content Include="Content\structure\images\igVideoPlayer\igWarningIcon.png" />
+    <Content Include="Content\structure\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\structure\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\structure\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\structure\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\structure\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\structure\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\structure\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\structure\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\structure\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\structure\infragistics.css" />
+    <Content Include="Content\structure\jquery-ui.css" />
+    <Content Include="Content\structure\jquery.ui.all.css" />
+    <Content Include="Content\structure\jquery.ui.base.css" />
+    <Content Include="Content\structure\jquery.ui.core.css" />
+    <Content Include="Content\structure\jquery.ui.css" />
+    <Content Include="Content\structure\jquery.ui.datepicker.css" />
+    <Content Include="Content\structure\jquery.ui.slider.css" />
+    <Content Include="Content\structure\jquery.ui.theme.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.chart.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.combo.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.dialog.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.editors.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.grid.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.html5.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.htmleditor.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.layout.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.map.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.pivot.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.radialgauge.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.rating.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.shared.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.sparkline.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.splitter.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.tilemanager.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.toolbar.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.tree.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.upload.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.validator.css" />
+    <Content Include="Content\structure\modules\infragistics.ui.videoplayer.css" />
+    <Content Include="Content\themes\infragistics\images\datepicker.gif" />
+    <Content Include="Content\themes\infragistics\images\gradient_1.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_2.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_3.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_4.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_5.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_6.png" />
+    <Content Include="Content\themes\infragistics\images\gradient_7.png" />
+    <Content Include="Content\themes\infragistics\images\icon_sprite.png" />
+    <Content Include="Content\themes\infragistics\images\igRating\ig-rating.png" />
+    <Content Include="Content\themes\infragistics\images\igVideoPlayer\igVideoPlayerIcons.png" />
+    <Content Include="Content\themes\infragistics\images\igVideoPlayer\igVPBackground.png" />
+    <Content Include="Content\themes\infragistics\images\igVideoPlayer\igVPBookmarkSprite.png" />
+    <Content Include="Content\themes\infragistics\images\progress_bar.gif" />
+    <Content Include="Content\themes\infragistics\images\slider_handles.png" />
+    <Content Include="Content\themes\infragistics\images\slider_h_bg.gif" />
+    <Content Include="Content\themes\infragistics\images\slider_v_bg.gif" />
+    <Content Include="Content\themes\infragistics\images\tab_bg.gif" />
+    <Content Include="Content\themes\infragistics\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\infragistics\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\themes\infragistics\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\infragistics\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\themes\infragistics\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\infragistics\infragistics.theme.css" />
+    <Content Include="Content\themes\metro\images\icon_sprite.png" />
+    <Content Include="Content\themes\metro\images\igGrid\filter-icons-858585.png" />
+    <Content Include="Content\themes\metro\images\igGrid\ig-rating-touch%402.png" />
+    <Content Include="Content\themes\metro\images\igGrid\ig-rating-touch.png" />
+    <Content Include="Content\themes\metro\images\igGrid\ig-rating.png" />
+    <Content Include="Content\themes\metro\images\igHtmlEditor\html-editor-sprite.png" />
+    <Content Include="Content\themes\metro\images\igRating\ig-rating-touch%402.png" />
+    <Content Include="Content\themes\metro\images\igRating\ig-rating-touch.png" />
+    <Content Include="Content\themes\metro\images\igRating\ig-rating.png" />
+    <Content Include="Content\themes\metro\images\igRating\SOURCE_ig-rating-touch%402.png" />
+    <Content Include="Content\themes\metro\images\igRating\SOURCE_ig-rating-touch.png" />
+    <Content Include="Content\themes\metro\images\igRating\SOURCE_ig-rating.png" />
+    <Content Include="Content\themes\metro\images\igTooltip\igTooltipArrows.png" />
+    <Content Include="Content\themes\metro\images\igVideoPlayer\igVideoPlayerIcons_858585.png" />
+    <Content Include="Content\themes\metro\images\igVideoPlayer\igVideoPlayerIcons_ffffff.png" />
+    <Content Include="Content\themes\metro\images\igVideoPlayer\igVPBookmarkSprite.png" />
+    <Content Include="Content\themes\metro\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\themes\metro\images\ui-icons_00AADE_256x240.png" />
+    <Content Include="Content\themes\metro\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\metro\images\ui-icons_565656_256x240.png" />
+    <Content Include="Content\themes\metro\images\ui-icons_858585_256x240.png" />
+    <Content Include="Content\themes\metro\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\metro\infragistics.theme.css" />
+    <Content Include="FactualDriver.XML" />
+    <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\ehealthcare - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ehealthcare - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\peronalapi - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\peronalapi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\personalapi - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\personalapi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\personalhealthweb - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\personalhealthweb - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="imgs\mara.png" />
+    <Content Include="imgs\mountain.png" />
+    <Content Include="imgs\step.png" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\infragistics.core.js" />
+    <Content Include="Scripts\infragistics.lob.js" />
+    <Content Include="Scripts\infragistics.util.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\otherChart.js" />
+    <Content Include="Scripts\plugs.js" />
+    <Content Include="Scripts\yqlgeo.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Weight.cshtml" />
+    <Content Include="Views\Home\Steps.cshtml" />
+    <Content Include="Views\Home\BloodPressure.cshtml" />
+    <Content Include="Views\Drug\DrugSearchByName.cshtml" />
+    <Content Include="Views\Drug\DrugSearchByNDC.cshtml" />
+    <Content Include="Views\Drug\DrugSearchByNDA.cshtml" />
+    <Content Include="Views\HealthCareProvider\GetAllProviders.cshtml" />
+    <Content Include="Views\HealthCareProvider\ProvidersWebGrid.cshtml" />
+    <Content Include="Views\Home\NutritionInfo.cshtml" />
+    <Content Include="Views\Home\Medication.cshtml" />
+    <Content Include="Views\PillIdentifier\Index.cshtml" />
+    <Content Include="Views\Home\Appointment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EHealthCareDataAccess\EHealthCareDataAccess.csproj">
+      <Project>{86108dc8-3a59-4433-9d9f-19c6ac669da7}</Project>
+      <Name>EHealthCareDataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60036</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60036/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

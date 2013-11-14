@@ -1,0 +1,12 @@
+﻿.ui-igtilemanager{overflow:auto;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
+.ui-igtile-header{min-height:30px}
+.ui-igtile{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;background-color:#f3f3f3;box-shadow:0 0 15px #c8c8c8;padding:0;border:1px solid #d3d3d3}
+.ui-igtile-inner-container{margin:10px;padding:5px;overflow-y:auto;height:100%;border:1px solid #d3d3d3;background-color:#FFF}
+.ig-tile-expand-button,.ig-tile-collapse-button,.ig-tile-minimize-button,.ig-tile-unminimize-button{position:relative;float:right;cursor:pointer;padding:2px}
+.ig-tile-minimize-button,.ig-tile-unminimize-button{margin:3px 10px 2px 0}
+.ig-tile-expand-button,.ig-tile-collapse-button{margin:3px 4px 2px 0}
+.ig-tile-expand-icon,.ig-tile-collapse-icon,.ig-tile-minimize-icon,.ig-tile-unminimize-icon{background-image:url(../images/icon_sprite.png)!important;background-repeat:repeat}
+.ig-tile-expand-icon{background-position:16px -256px}
+.ig-tile-collapse-icon{background-position:16px -241px}
+.ig-tile-minimize-icon{background-position:16px -208px}
+.ig-tile-unminimize-icon{background-position:16px -223px}

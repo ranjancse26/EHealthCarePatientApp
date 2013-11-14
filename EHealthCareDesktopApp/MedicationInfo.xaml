@@ -1,0 +1,50 @@
+﻿<Controls:MetroWindow x:Class="EHealthCareDesktopApp.MedicationInfo"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Medication Info" Height="354" Width="616" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="WindowLoaded">
+    
+   <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+
+        <!--<WebBrowser x:Name="webBrowserControl" HorizontalAlignment="Left" Margin="0,80,0,0" Height="Auto"
+                     Width="Auto"/>-->
+
+        <ListView Margin="10,90,10,10" Name="listViewMedications" FontSize="24">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding StartDate}" />
+                    <GridViewColumn Header="MedicationName" DisplayMemberBinding="{Binding MedicationName}" />
+                    <GridViewColumn Header="Strength" DisplayMemberBinding="{Binding Strength}" />
+                    <GridViewColumn Header="Dose" DisplayMemberBinding="{Binding Dose}" />
+                    <GridViewColumn Header="HowTaken" DisplayMemberBinding="{Binding HowTaken}" Width="200" />
+                    <GridViewColumn Header="ReasonForTaking" DisplayMemberBinding="{Binding ReasonForTaking}" Width="300"  />
+                    <GridViewColumn Header="StartDate" DisplayMemberBinding="{Binding StartDate}" />
+                    <GridViewColumn Header="EndDate" DisplayMemberBinding="{Binding EndDate}" />
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Width="200" Click="DeleteClick" CommandParameter="{Binding Id}" ></Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <Button Content="Add Medications" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="163" Height="55" Click="AddMedicationsButtonClick"/>
+
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,24 @@
+﻿<Controls:MetroWindow x:Class="EHealthCareDesktopApp.StepsInfo"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StepsInfo" WindowState="Maximized" Loaded="WindowLoaded" WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <WebBrowser x:Name="webBrowserControl" HorizontalAlignment="Left" Margin="-20,80,0,0" Height="Auto"
+                     Width="Auto"/>
+        <Button Content="Add Steps" HorizontalAlignment="Left"
+                VerticalAlignment="Top" Width="152" Height="50" Click="AddStepsClick" Margin="0,10,0,0"/>
+    </Grid>
+</Controls:MetroWindow>

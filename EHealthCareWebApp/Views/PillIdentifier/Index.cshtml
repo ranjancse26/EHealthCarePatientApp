@@ -1,0 +1,97 @@
+﻿@model IEnumerable<EHealthCareWebApp.Models.PillInfoEntity>
+
+@{
+    Layout = null;
+}
+
+@{
+    var grid = new WebGrid(Model, canPage: false, canSort: false, defaultSort: "Name");
+}
+
+@if (Model.Count() == 0)
+{
+    <p>No data found</p>
+}
+else
+{   
+      <table id="grid" class="ui-iggrid-table ui-widget-content">
+                   <thead>
+                       <tr data-header-row="">
+                       <th id="grid_1" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">NDC</span>
+                       </th>
+                       <th id="grid_2" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">RxString</span>
+                       </th>
+                       <th id="grid_3" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">Image</span>
+                       </th>
+                       <th id="grid_4" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">Author</span>
+                       </th>
+                       <th id="grid_5" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">Imprint</span>
+                       </th>
+                       <th id="grid_6" class="ui-iggrid-header ui-widget-header">
+                           <span class="ui-iggrid-headertext">Ingredients</span>
+                       </th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                    @foreach (var pillInfo in Model)
+                    {
+                            <tr>
+                                <td>                                    
+                                    @Html.DisplayFor(model => pillInfo.NDC9)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => pillInfo.RxString)
+                                </td>
+                                @if(pillInfo.HasImage == "1"){                                    
+                                    <td>
+                                       <img src="@pillInfo.ImageUrl" />
+                                    </td>
+                                }else
+                                {
+                                    <td>
+                                   
+                                    </td>
+                                }
+                                <td>
+                                    @Html.DisplayFor(model => pillInfo.Author)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => pillInfo.Imprint)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => pillInfo.Ingredients)
+                                </td>
+                        </tr>   
+                    }
+                    </tbody>
+                </table>
+}
+
+
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+<script src="../../Scripts/plugs.js"></script>
+<script src="../../Scripts/otherChart.js"></script>
+
+<link href="../../Content/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link href="../../Content/structure/infragistics.css" rel="stylesheet" />
+
+<script src="../../Scripts/jquery-ui-1.8.20.min.js"></script>
+<script src="../../Scripts/infragistics.util.js"></script>
+<script src="../../Scripts/infragistics.core.js"></script>
+<script src="../../Scripts/infragistics.lob.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#grid").igGrid({
+            
+        });
+            
+    });
+
+</script>

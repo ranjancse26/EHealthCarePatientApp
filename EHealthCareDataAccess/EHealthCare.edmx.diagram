@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b82d284a9355472e8853cb7155ce98f2" Name="Diagram1">
+        <EntityTypeShape EntityType="eHealthCareModel.AllergyReaction" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.AllergyType" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.BloodPressure" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="eHealthCareModel.Condition" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="eHealthCareModel.Contact" Width="1.5" PointX="3" PointY="10.25" />
+        <EntityTypeShape EntityType="eHealthCareModel.DietaryIntake" Width="1.5" PointX="3" PointY="14.875" />
+        <EntityTypeShape EntityType="eHealthCareModel.Distance" Width="1.5" PointX="3" PointY="18.375" />
+        <EntityTypeShape EntityType="eHealthCareModel.Elevation" Width="1.5" PointX="3" PointY="21.375" />
+        <EntityTypeShape EntityType="eHealthCareModel.Height" Width="1.5" PointX="3" PointY="24.25" />
+        <EntityTypeShape EntityType="eHealthCareModel.Insurance" Width="1.5" PointX="3" PointY="27.375" />
+        <EntityTypeShape EntityType="eHealthCareModel.MedicationDose" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.Medication" Width="1.5" PointX="3" PointY="31.5" />
+        <EntityTypeShape EntityType="eHealthCareModel.MedicationStregth" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.MedicationTaken" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.NutritionInfo" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.PatientNote" Width="1.5" PointX="3" PointY="35.875" />
+        <EntityTypeShape EntityType="eHealthCareModel.Patient" Width="1.5" PointX="0.75" PointY="22.5" />
+        <EntityTypeShape EntityType="eHealthCareModel.Procedure" Width="1.5" PointX="3" PointY="39" />
+        <EntityTypeShape EntityType="eHealthCareModel.Provider" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.Specialty" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.Step" Width="1.5" PointX="3" PointY="42.5" />
+        <EntityTypeShape EntityType="eHealthCareModel.Weight" Width="1.5" PointX="3" PointY="45.5" />
+        <AssociationConnector Association="eHealthCareModel.FK__BloodPres__Patie__534D60F1" />
+        <AssociationConnector Association="eHealthCareModel.FK__Condition__Patie__5441852A" />
+        <AssociationConnector Association="eHealthCareModel.FK__Contacts__Patien__05D8E0BE" />
+        <AssociationConnector Association="eHealthCareModel.FK__DietaryIn__Patie__5535A963" />
+        <AssociationConnector Association="eHealthCareModel.FK__Distances__Patie__5629CD9C" />
+        <AssociationConnector Association="eHealthCareModel.FK__Elevation__Patie__571DF1D5" />
+        <AssociationConnector Association="eHealthCareModel.FK__Heights__Patient__5812160E" />
+        <AssociationConnector Association="eHealthCareModel.FK__Insurance__Patie__02FC7413" />
+        <AssociationConnector Association="eHealthCareModel.FK_Medication_Patients" />
+        <AssociationConnector Association="eHealthCareModel.FK_PatientNotes_Patients" />
+        <AssociationConnector Association="eHealthCareModel.FK__Steps__PatientId__5BE2A6F2" />
+        <AssociationConnector Association="eHealthCareModel.FK__Weights__Patient__3F115E1A" />
+        <AssociationConnector Association="eHealthCareModel.FK_Procedures_Patients" />
+        <EntityTypeShape EntityType="eHealthCareModel.Appointment" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.AudioAppointment" Width="1.5" PointX="9.75" PointY="7.75" />
+        <EntityTypeShape EntityType="eHealthCareModel.Dicom" Width="1.5" PointX="11.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

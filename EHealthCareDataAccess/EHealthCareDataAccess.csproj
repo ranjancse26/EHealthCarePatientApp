@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86108DC8-3A59-4433-9D9F-19C6AC669DA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EHealthCareDataAccess</RootNamespace>
+    <AssemblyName>EHealthCareDataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllergyReaction.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllergyType.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AudioAppointment.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BloodPressure.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BloodPressureDataRepository.cs" />
+    <Compile Include="Condition.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConditionDataRepository.cs" />
+    <Compile Include="Contact.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactsDataRepository.cs" />
+    <Compile Include="AppointmentDataRepository.cs" />
+    <Compile Include="Dicom.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DicomDataRepository.cs" />
+    <Compile Include="DietaryIntake.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DietaryIntakesDataRepository.cs" />
+    <Compile Include="Distance.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EHealthCare.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EHealthCare.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EHealthCare.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EHealthCare.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EHealthCare.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Elevation.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameworkValidation.cs" />
+    <Compile Include="Height.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Insurance.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Medication.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicationDataRepository.cs" />
+    <Compile Include="MedicationDose.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicationStregth.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicationTaken.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NutritionInfo.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientNote.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Procedure.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProcedureDataRepository.cs" />
+    <Compile Include="HeightDataRepository.cs" />
+    <Compile Include="PatientNotesRepository.cs" />
+    <Compile Include="InsuranceDataRepository.cs" />
+    <Compile Include="PatientDataRepository.cs" />
+    <Compile Include="Provider.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderDataRepository.cs" />
+    <Compile Include="Specialty.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Step.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StepsDataRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weight.cs">
+      <DependentUpon>EHealthCare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeightDataRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="EHealthCare.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EHealthCare.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EHealthCare.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EHealthCare.edmx</DependentUpon>
+      <LastGenOutput>EHealthCare.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EHealthCare.edmx.diagram">
+      <DependentUpon>EHealthCare.edmx</DependentUpon>
+    </None>
+    <None Include="EHealthCare.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EHealthCare.edmx</DependentUpon>
+      <LastGenOutput>EHealthCare.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

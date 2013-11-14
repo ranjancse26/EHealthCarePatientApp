@@ -1,0 +1,46 @@
+﻿<Controls:MetroWindow x:Class="EHealthCareDesktopApp.ManageClinicalInfo.ManageInsurances"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Manage Insurance" Height="709" Width="593.164" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Label Content="Plan Name: " HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="txtPlanName" 
+    		HorizontalAlignment="Left" Height="46" Margin="221,31,0,0" TextWrapping="Wrap" 
+    		VerticalAlignment="Top" Width="339" FontSize="24" Controls:TextboxHelper.Watermark="Steps in lbs" RenderTransformOrigin="0.834,0.543"/>
+        <Label Content="Coverage Type: " HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="txtCoverageType" 
+        	HorizontalAlignment="Left" Height="46" Margin="221,108,0,0" TextWrapping="Wrap" 
+        	VerticalAlignment="Top" Width="339" FontSize="24" Controls:TextboxHelper.Watermark="Steps in lbs" RenderTransformOrigin="0.834,0.543"/>
+        <CheckBox Content="Is Primary" HorizontalAlignment="Left" Margin="19,192,0,0" VerticalAlignment="Top" FontSize="24" />
+        <Label Content="Group Number: " HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="txtGroupNumber" 
+        	HorizontalAlignment="Left" Height="46" Margin="221,259,0,0" TextWrapping="Wrap" 
+        	VerticalAlignment="Top" Width="339" FontSize="24" Controls:TextboxHelper.Watermark="Steps in lbs" RenderTransformOrigin="0.834,0.543"/>
+        <Label Content="Subscriber ID: " HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="txtSubscriberID" 
+        	HorizontalAlignment="Left" Height="46" Margin="221,332,0,0" TextWrapping="Wrap" 
+        	VerticalAlignment="Top" Width="339" FontSize="24" Controls:TextboxHelper.Watermark="Steps in lbs" RenderTransformOrigin="0.834,0.543"/>
+        <DatePicker TabIndex="5" x:Name="dtPickerExpirationDate" HorizontalAlignment="Left" Height="44" Margin="221,537,0,0" VerticalAlignment="Top" Width="339" FontSize="24"/>
+        <Label Content="Expiration Date: " HorizontalAlignment="Left" Margin="11,539,0,0" VerticalAlignment="Top" FontSize="24" />
+        <Label Content="Subscriber Date: " HorizontalAlignment="Left" Margin="10,476,0,0" VerticalAlignment="Top" FontSize="24" />
+        <DatePicker TabIndex="5" x:Name="dtPickerSubscriber"  HorizontalAlignment="Left" Height="44" Margin="221,476,0,0" VerticalAlignment="Top" Width="339" FontSize="24"/>
+        <Label Content="Subscriber DOB: " HorizontalAlignment="Left" Margin="11,405,0,0" VerticalAlignment="Top" FontSize="24" />
+        <DatePicker TabIndex="5" x:Name="dtPickerSubscriberDOB"  HorizontalAlignment="Left" Height="44" Margin="221,405,0,0" VerticalAlignment="Top" Width="339" FontSize="24"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="397,609,0,0" VerticalAlignment="Top" Width="163" Height="49" Click="SaveButtonClick"/>
+
+    </Grid>
+</Controls:MetroWindow>

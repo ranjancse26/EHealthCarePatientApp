@@ -1,0 +1,99 @@
+﻿@model IEnumerable<EHealthCareWebApp.Models.AppointmentViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-HealthCare - Appointments</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="grid_container" class="ui-iggrid ui-widget ui-helper-clearfix ui-corner-all" tabindex="0" >
+            <table id="grid" class="ui-iggrid-table ui-widget-content">
+                    <thead>
+                        <tr data-header-row="">
+                        <th id="grid_1" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Start Date</span>
+                        </th>
+                        <th id="grid_2" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">End Date</span>
+                        </th>   
+                        <th id="grid_3" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Provider</span>
+                        </th>
+                        <th id="grid_4" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Specialty</span>
+                        </th>
+                        <th id="grid_5" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Purpose</span>
+                        </th>
+                        <th id="grid_6" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Type</span>
+                        </th>  
+                        <th id="grid_7" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Status</span>
+                        </th>
+                        <th id="grid_8" class="ui-iggrid-header ui-widget-header">
+                            <span class="ui-iggrid-headertext">Notes</span>
+                        </th>                                                    
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var appointment in Model)
+                    {
+                        <tr>
+                            <td>                                    
+                                @Html.DisplayFor(model => appointment.StartDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => appointment.EndDate)
+                            </td>   
+                             <td>                                    
+                                @Html.DisplayFor(model => appointment.ProviderName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => appointment.SpecialtyName)
+                            </td>   
+                             <td>                                    
+                                @Html.DisplayFor(model => appointment.Purpose)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => appointment.Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => appointment.Status)
+                            </td>    
+                             <td>
+                                @Html.DisplayFor(model => appointment.Notes)
+                            </td>                                          
+                        </tr>   
+                    }
+                    </tbody>
+                </table>
+        </div> 
+</body>
+</html>
+
+<script src="../../Scripts/jquery-1.7.1.js"></script>
+<link href="../../Content/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link href="../../Content/structure/infragistics.css" rel="stylesheet" />
+
+<script src="../../Scripts/jquery-ui-1.8.20.min.js"></script>
+<script src="../../Scripts/infragistics.util.js"></script>
+<script src="../../Scripts/infragistics.core.js"></script>
+<script src="../../Scripts/infragistics.lob.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#grid").igGrid({
+            defaultColumnWidth: 150
+        });
+
+    });
+ </script>

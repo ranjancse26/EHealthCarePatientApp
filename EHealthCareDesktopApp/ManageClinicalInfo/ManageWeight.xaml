@@ -1,0 +1,35 @@
+﻿<Controls:MetroWindow x:Class="EHealthCareDesktopApp.ManageClinicalInfo.ManageWeight"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Manage Weight" Height="366" Width="433" Loaded="WindowLoaded"
+        WindowState="Normal" WindowStartupLocation="CenterScreen"
+        xmlns:lib="clr-namespace:EHealthCareDesktopApp.Helpers" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <Label Content="Weight: " HorizontalAlignment="Left" Margin="67,31,0,0" VerticalAlignment="Top" FontSize="24" />
+        <TextBox Controls:TextboxHelper.Watermark="Weight in lbs" x:Name="txtWeight" 
+                 HorizontalAlignment="Left" Height="46" Margin="197,31,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="169" FontSize="24" PreviewTextInput="WeightTextInput" />
+        <DatePicker TabIndex="5" x:Name="dtPicker" HorizontalAlignment="Left" Height="44" Margin="197,182,0,0" VerticalAlignment="Top" Width="169" FontSize="24"/>
+        <Label Content="Date: " HorizontalAlignment="Left" Margin="94,181,0,0" VerticalAlignment="Top" FontSize="24" />
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" 
+                Margin="228,260,0,0" VerticalAlignment="Top" Width="138" Height="54" Click="SaveWeight"/>
+        <Label Content="Weight Goal:" HorizontalAlignment="Left" Margin="17,114,0,0" VerticalAlignment="Top" FontSize="24" />
+        <TextBox x:Name="txtWeightGoal" 
+        	HorizontalAlignment="Left" Height="46" Margin="197,110,0,0" TextWrapping="Wrap" 
+        	VerticalAlignment="Top" Width="169" FontSize="24" Controls:TextboxHelper.Watermark="Weight Goal in lbs" PreviewTextInput="WeightGoalTextInput"/>
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,30 @@
+﻿<Controls:MetroWindow x:Class="EHealthCareDesktopApp.ManageClinicalInfo.ManageSteps"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Manage Weight" Height="306" Width="433" Loaded="WindowLoaded"
+        WindowState="Normal" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <Label Content="Steps: " HorizontalAlignment="Left" Margin="67,31,0,0" VerticalAlignment="Top" FontSize="24" />
+        <TextBox Controls:TextboxHelper.Watermark="Steps in meters" x:Name="txtSteps" 
+                 HorizontalAlignment="Left" Height="46" Margin="197,31,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="169" FontSize="24" PreviewTextInput="StepTextInput"/>
+        <DatePicker TabIndex="5" x:Name="dtPicker" HorizontalAlignment="Left" Height="44" Margin="197,97,0,0" VerticalAlignment="Top" Width="169" FontSize="24"/>
+        <Label Content="Date: " HorizontalAlignment="Left" Margin="67,97,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" 
+                Margin="228,187,0,0" VerticalAlignment="Top" Width="138" Height="54" Click="SaveSteps"/>
+    </Grid>
+</Controls:MetroWindow>
